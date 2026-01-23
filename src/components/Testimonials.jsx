@@ -12,11 +12,11 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      text: "Working with Aryan on BeaverBuddy was fantastic. He brought both technical excellence and a strong user-centric mindset. His ability to optimize complex systems and deliver production-ready code is exceptional. Highly recommended!",
-      author: "James Chen",
-      role: "Product Manager",
-      company: "Mental Health Tech",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
+      text: "Aryan was both a consistent and hard worker, willing to spend time and effort learning in areas outside his prior experience. He inventively applied his newfound knowledge to come up with creative solutions for the problems that we faced. He is a great partner to work with, and from working on our project, he gained an intuitive understanding of neural networks and the Godot engine.",
+      author: "Joshua Song",
+      role: "Co-Developer, AI Racer",
+      company: "AI Racer Project",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Joshua",
       rating: 5
     },
     {
@@ -38,17 +38,17 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 px-6 relative overflow-hidden">
+    <section id="testimonials" className="py-24 px-6 relative overflow-hidden bg-black">
       {/* Background elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-600/10 rounded-full filter blur-3xl opacity-30 animate-blob" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full filter blur-3xl opacity-20 animate-blob" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-white/3 rounded-full filter blur-3xl opacity-10 animate-blob" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/1 rounded-full filter blur-3xl opacity-5 animate-blob" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
-            <Users size={16} className="text-indigo-400" />
-            <span className="text-sm text-indigo-300 font-semibold">Social Proof</span>
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+            <Users size={16} className="text-white" />
+            <span className="text-sm text-white font-semibold">Social Proof</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="glow-text">Testimonials</span>
@@ -67,11 +67,11 @@ const Testimonials = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-indigo-600/5 opacity-0 group-hover:opacity-100 rounded-xl transition duration-500 -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 rounded-xl transition duration-500 -z-10" />
 
               {/* Quote icon */}
               <div className="flex justify-between items-start mb-4">
-                <Quote className="text-indigo-400/50 group-hover:text-indigo-300/70 transition duration-300" size={32} />
+                <Quote className="text-white/30 group-hover:text-white/50 transition duration-300" size={32} />
                 {/* Rating */}
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -86,22 +86,22 @@ const Testimonials = () => {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-indigo-500/20">
+              <div className="flex items-center gap-4 pt-6 border-t border-white/20">
                 <img
                   src={testimonial.image}
                   alt={testimonial.author}
-                  className="w-12 h-12 rounded-full border-2 border-indigo-400/50 group-hover:border-indigo-300/80 transition duration-300"
+                  className="w-12 h-12 rounded-full border-2 border-white/30 group-hover:border-white/60 transition duration-300"
                 />
                 <div>
-                  <p className="font-semibold text-indigo-300 group-hover:text-indigo-200 transition">{testimonial.author}</p>
+                  <p className="font-semibold text-white group-hover:text-gray-200 transition">{testimonial.author}</p>
                   <p className="text-sm text-gray-400">{testimonial.role}</p>
-                  <p className="text-xs text-indigo-400/70">{testimonial.company}</p>
+                  <p className="text-xs text-gray-500">{testimonial.company}</p>
                 </div>
               </div>
 
               {/* Scan line animation */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none rounded-xl overflow-hidden">
-                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-indigo-400 to-transparent" />
+                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-white to-transparent" />
               </div>
             </div>
           ))}

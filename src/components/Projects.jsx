@@ -63,17 +63,17 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 relative overflow-hidden">
+    <section id="projects" className="py-24 px-6 relative overflow-hidden bg-black">
       {/* Background elements */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 rounded-full filter blur-3xl opacity-20 animate-blob" />
-      <div className="absolute top-1/2 right-0 w-80 h-80 bg-indigo-600/5 rounded-full filter blur-3xl opacity-15" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/3 rounded-full filter blur-3xl opacity-20 animate-blob" />
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-white/2 rounded-full filter blur-3xl opacity-15" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
-            <Code size={16} className="text-indigo-400" />
-            <span className="text-sm text-indigo-300 font-semibold">Project Portfolio</span>
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+            <Code size={16} className="text-white" />
+            <span className="text-sm text-white font-semibold">Project Portfolio</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="glow-text">Featured Projects</span>
@@ -93,13 +93,13 @@ const Projects = () => {
             >
               {/* Scan line effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none rounded-xl overflow-hidden">
-                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-indigo-400 to-transparent" />
+                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-white to-transparent" />
               </div>
 
               <div className="relative z-10">
                 {/* Badges at top right */}
                 <div className="flex gap-3 flex-wrap justify-end mb-4">
-                  <div className="text-xs bg-indigo-500/10 px-3 py-1 rounded-full text-indigo-300 border border-indigo-500/30">
+                  <div className="text-xs bg-white/10 px-3 py-1 rounded-full text-gray-200 border border-white/20">
                     {project.date}
                   </div>
                   {project.isPersonal && (
@@ -114,7 +114,7 @@ const Projects = () => {
 
                 {/* Project Image */}
                 {project.image && (
-                  <div className="mb-6 h-24 w-32 rounded-lg overflow-hidden border border-indigo-500/30 shadow-lg shadow-indigo-500/20">
+                  <div className="mb-6 h-24 w-32 rounded-lg overflow-hidden border border-white/20 shadow-lg shadow-white/10">
                     <img 
                       src={project.image} 
                       alt={project.title}
@@ -127,14 +127,14 @@ const Projects = () => {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-2xl font-bold text-indigo-300 group-hover:text-indigo-200 transition">
+                      <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-semibold text-indigo-300 uppercase bg-indigo-500/20 px-3 py-1 rounded-full border border-indigo-400/50 group-hover:border-indigo-300/80 transition">
+                      <span className="text-xs font-semibold text-white uppercase bg-white/20 px-3 py-1 rounded-full border border-white/30 group-hover:border-white/50 transition">
                         {project.tag}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 uppercase tracking-wider group-hover:text-indigo-400 transition">
+                    <p className="text-xs text-gray-500 uppercase tracking-wider group-hover:text-white transition">
                       {project.type}
                     </p>
                   </div>
@@ -149,7 +149,7 @@ const Projects = () => {
                 <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3">
                   {project.highlights.map((highlight, i) => (
                     <div key={i} className="flex gap-2 text-sm text-gray-400">
-                      <span className="text-indigo-500 flex-shrink-0 mt-1">▸</span>
+                      <span className="text-white flex-shrink-0 mt-1">▸</span>
                       <span>{highlight}</span>
                     </div>
                   ))}
@@ -160,7 +160,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs text-indigo-300 bg-indigo-500/10 border border-indigo-400/40 px-3 py-1.5 rounded-lg group-hover:border-indigo-300/60 transition"
+                      className="text-xs text-white bg-white/10 border border-white/20 px-3 py-1.5 rounded-lg group-hover:border-white/40 transition"
                     >
                       {tech}
                     </span>
@@ -184,7 +184,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-400/40 hover:border-indigo-300/80 hover:bg-indigo-500/20 text-indigo-300 hover:text-indigo-200 rounded-lg transition transform hover:scale-105 duration-300"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 text-white rounded-lg transition transform hover:scale-105 duration-300"
                   >
                     <Github size={16} />
                     <span className="text-sm font-medium">View Code</span>

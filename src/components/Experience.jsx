@@ -45,17 +45,17 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-6 relative overflow-hidden">
+    <section id="experience" className="py-24 px-6 relative overflow-hidden bg-black">
       {/* Background elements */}
-      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-indigo-600/10 rounded-full filter blur-3xl opacity-30" />
-      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-indigo-500/5 rounded-full filter blur-3xl opacity-20" />
+      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-white/3 rounded-full filter blur-3xl opacity-10" />
+      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-white/1 rounded-full filter blur-3xl opacity-5" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="mb-16 text-center animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
-            <Briefcase size={16} className="text-indigo-400" />
-            <span className="text-sm text-indigo-300 font-semibold">Professional Journey</span>
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+            <Briefcase size={16} className="text-white" />
+            <span className="text-sm text-white font-semibold">Professional Journey</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="glow-text">Experience</span>
@@ -74,15 +74,15 @@ const Experience = () => {
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               {/* Timeline dot */}
-              <div className="absolute left-0 top-6 w-4 h-4 bg-indigo-500 rounded-full border-4 border-slate-900 shadow-lg shadow-indigo-500/50" />
+              <div className="absolute left-0 top-6 w-4 h-4 bg-white rounded-full border-4 border-slate-900 shadow-lg shadow-white/30" />
               
               {/* Timeline line */}
               {index !== experiences.length - 1 && (
-                <div className="absolute left-1.5 top-12 w-0.5 h-24 bg-gradient-to-b from-indigo-500/40 to-transparent" />
+                <div className="absolute left-1.5 top-12 w-0.5 h-24 bg-gradient-to-b from-white/40 to-transparent" />
               )}
 
               {/* Card */}
-              <div className="ml-12 p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-indigo-500/50 rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-indigo-500/20">
+              <div className="ml-12 p-6 bg-neutral-900/50 border border-neutral-800/60 hover:border-neutral-700 rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-white/5">
                 <div className="flex flex-col lg:flex-row lg:gap-6 mb-4">
                   {/* Logo/Image */}
                   {exp.image && (
@@ -90,7 +90,7 @@ const Experience = () => {
                       <img 
                         src={exp.image} 
                         alt={exp.company}
-                        className="h-20 w-20 object-cover rounded-lg border border-indigo-500/30 shadow-lg"
+                        className="h-20 w-20 object-cover rounded-lg border border-white/20 shadow-lg"
                       />
                     </div>
                   )}
@@ -99,18 +99,18 @@ const Experience = () => {
                   <div className="flex-grow">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                       <div>
-                        <h3 className="text-xl font-bold text-indigo-300 group-hover:text-indigo-200 transition">
+                        <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition">
                           {exp.role}
                         </h3>
                         <div className="flex items-center gap-2 mt-2 text-gray-400">
-                          <span className="font-semibold text-indigo-400/80">{exp.company}</span>
+                          <span className="font-semibold text-gray-300">{exp.company}</span>
                           <span className="text-gray-600">•</span>
                           <MapPin size={14} className="text-gray-500" />
                           <span className="text-sm">{exp.location}</span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm font-semibold text-indigo-400/70 bg-indigo-500/10 px-3 py-1 rounded-full inline-block">
+                        <div className="text-sm font-semibold text-gray-300 bg-white/10 px-3 py-1 rounded-full inline-block">
                           {exp.period}
                         </div>
                       </div>
@@ -124,7 +124,7 @@ const Experience = () => {
                     <div className="space-y-2 ml-4">
                       {exp.highlights.map((highlight, i) => (
                         <div key={i} className="flex gap-3 text-sm text-gray-400">
-                          <Code2 size={14} className="text-indigo-500/60 flex-shrink-0 mt-1" />
+                          <Code2 size={14} className="text-white/60 flex-shrink-0 mt-1" />
                           <span>{highlight}</span>
                         </div>
                       ))}
@@ -142,10 +142,10 @@ const Experience = () => {
             <h3 className="text-2xl font-bold mb-6">
               <span className="glow-text">Education</span>
             </h3>
-            <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-slate-800/30 border border-indigo-500/30 rounded-xl">
+            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <h4 className="text-lg font-bold text-indigo-300 mb-1">
+                  <h4 className="text-lg font-bold text-white mb-1">
                     Bachelor of Science in Computer Science (Co-op)
                   </h4>
                   <p className="text-gray-400 flex items-center gap-2">
@@ -153,8 +153,8 @@ const Experience = () => {
                     <span className="text-gray-600">•</span>
                     <span>Toronto, ON</span>
                   </p>
-                  <p className="text-sm text-indigo-400/70 mt-2 flex gap-2 items-center">
-                    <span className="inline-block px-2 py-1 bg-indigo-500/20 rounded text-xs">2024 - 2029</span>
+                  <p className="text-sm text-gray-300 mt-2 flex gap-2 items-center">
+                    <span className="inline-block px-2 py-1 bg-white/10 rounded text-xs">2024 - 2029</span>
                     <span className="inline-block px-2 py-1 bg-green-500/20 rounded text-xs text-green-300">$6,000 Entrance Scholarship</span>
                   </p>
                 </div>

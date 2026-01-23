@@ -10,11 +10,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6 bg-gradient-to-b from-transparent via-violet-900/5 to-transparent relative overflow-hidden">
+    <section id="about" className="py-20 px-6 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/10 rounded-full filter blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-white/3 rounded-full filter blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto">
@@ -24,29 +24,29 @@ const About = () => {
           {/* Text Content */}
           <div className="space-y-6 animate-slide-in-left">
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a <span className="font-bold text-violet-400">CS student at Toronto Metropolitan University</span> pursuing a passion for building intelligent, scalable systems. With experience spanning <span className="font-bold text-pink-400">full-stack development, AI/ML, and emerging technologies</span>, I've worked on projects ranging from mental health web applications to reinforcement learning systems.
+              I'm a <span className="font-bold text-white">CS student at Toronto Metropolitan University</span> pursuing a passion for building intelligent, scalable systems. With experience spanning <span className="font-bold text-gray-200">full-stack development, AI/ML, and emerging technologies</span>, I've worked on projects ranging from mental health web applications to reinforcement learning systems.
             </p>
 
-            <div className="flex items-start gap-3 p-4 bg-violet-500/10 rounded-lg border border-violet-400/30 hover:border-violet-400/60 transition group">
-              <Code className="text-violet-400 flex-shrink-0 mt-1 group-hover:text-pink-400 transition" size={24} />
+            <div className="flex items-start gap-3 p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition group">
+              <Code className="text-white flex-shrink-0 mt-1 group-hover:text-gray-100 transition" size={24} />
               <div>
-                <p className="font-semibold text-violet-300 mb-1">Leadership & Mentorship</p>
+                <p className="font-semibold text-white mb-1">Leadership & Mentorship</p>
                 <p className="text-gray-400 text-sm">At Google Developer Groups, I lead development teams using Agile methodologies and mentor 50+ students on web technologies.</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 bg-pink-500/10 rounded-lg border border-pink-400/30 hover:border-pink-400/60 transition group">
-              <Zap className="text-pink-400 flex-shrink-0 mt-1 group-hover:text-violet-400 transition" size={24} />
+            <div className="flex items-start gap-3 p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition group">
+              <Zap className="text-white flex-shrink-0 mt-1 group-hover:text-gray-100 transition" size={24} />
               <div>
-                <p className="font-semibold text-pink-300 mb-1">AI/ML Optimization</p>
+                <p className="font-semibold text-white mb-1">AI/ML Optimization</p>
                 <p className="text-gray-400 text-sm">My work at Byte focused on optimizing codebase processing workflows using Python and ML, reducing test failures by 35%.</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 p-4 bg-rose-500/10 rounded-lg border border-rose-400/30 hover:border-rose-400/60 transition group">
-              <Lightbulb className="text-rose-400 flex-shrink-0 mt-1 group-hover:text-violet-400 transition" size={24} />
+            <div className="flex items-start gap-3 p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition group">
+              <Lightbulb className="text-white flex-shrink-0 mt-1 group-hover:text-gray-100 transition" size={24} />
               <div>
-                <p className="font-semibold text-rose-300 mb-1">Passionate About Innovation</p>
+                <p className="font-semibold text-white mb-1">Passionate About Innovation</p>
                 <p className="text-gray-400 text-sm">I'm particularly excited about the intersection of AI and software engineering—building systems that are intelligent and adaptive.</p>
               </div>
             </div>
@@ -62,12 +62,12 @@ const About = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="group card hover:shadow-2xl hover:shadow-blue-500/20 relative overflow-hidden transform hover:scale-110 cursor-default animate-fade-in"
+                className="group card hover:shadow-2xl hover:shadow-white/10 relative overflow-hidden transform hover:scale-110 cursor-default animate-fade-in"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                 <div className="relative z-10 text-center">
-                  <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-violet-400 to-pink-300 bg-clip-text text-transparent mb-2 group-hover:text-5xl transition-all">
+                  <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-gray-100 to-white bg-clip-text text-transparent mb-2 group-hover:text-5xl transition-all">
                     {stat.value}
                   </div>
                   <p className="text-gray-400 text-xs md:text-sm">{stat.description}</p>
@@ -80,7 +80,7 @@ const About = () => {
         {/* Skills Preview */}
         <div className="mt-16 pt-12 border-t border-slate-700/50">
           <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
-            <div className="w-1 h-8 bg-gradient-to-b from-violet-400 to-pink-300 rounded-full" />
+            <div className="w-1 h-8 bg-gradient-to-b from-white to-gray-400 rounded-full" />
             Key Highlights
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -90,7 +90,7 @@ const About = () => {
               { title: "Clean Architecture", desc: "Writing maintainable, scalable code with strong focus on best practices" }
             ].map((item, i) => (
               <div key={i} className="group card hover:shadow-xl animate-fade-in" style={{ animationDelay: `${0.6 + i * 0.1}s` }}>
-                <h4 className="text-violet-400 font-bold mb-2 group-hover:text-pink-300 transition">{item.title}</h4>
+                <h4 className="text-white font-bold mb-2 group-hover:text-gray-200 transition">{item.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}

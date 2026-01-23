@@ -42,17 +42,17 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 relative overflow-hidden">
+    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-black">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-600/10 rounded-full filter blur-3xl opacity-20" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-indigo-500/5 rounded-full filter blur-3xl opacity-15" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-white/3 rounded-full filter blur-3xl opacity-10" />
+      <div className="absolute bottom-20 left-0 w-80 h-80 bg-white/1 rounded-full filter blur-3xl opacity-5" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
-            <Zap size={16} className="text-indigo-400" />
-            <span className="text-sm text-indigo-300 font-semibold">Technical Arsenal</span>
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
+            <Zap size={16} className="text-white" />
+            <span className="text-sm text-white font-semibold">Technical Arsenal</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="glow-text">Skills & Expertise</span>
@@ -69,19 +69,19 @@ const Skills = () => {
             return (
               <div
                 key={index}
-                className="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-indigo-500/50 rounded-xl transition-all duration-300 animate-fade-in overflow-hidden"
+                className="group p-6 bg-neutral-900/50 border border-neutral-800/60 hover:border-neutral-700 rounded-xl transition-all duration-300 animate-fade-in overflow-hidden"
                 style={{ animationDelay: `${0.1 + index * 0.05}s` }}
               >
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
 
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-indigo-500/20 rounded-lg group-hover:bg-indigo-500/30 transition">
-                      <Icon size={20} className="text-indigo-400" />
+                    <div className="p-2 bg-white/20 rounded-lg group-hover:bg-white/30 transition">
+                      <Icon size={20} className="text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-indigo-300 group-hover:text-indigo-200 transition">
+                    <h3 className="text-lg font-bold text-white group-hover:text-gray-100 transition">
                       {category.title}
                     </h3>
                   </div>
@@ -95,7 +95,7 @@ const Skills = () => {
                     {category.skills.map((skill, i) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-indigo-500/10 border border-indigo-400/30 hover:border-indigo-300/60 hover:bg-indigo-500/20 text-xs text-indigo-300 hover:text-indigo-200 rounded-lg transition transform hover:scale-105 cursor-default duration-200"
+                        className="px-3 py-1 bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 text-xs text-white rounded-lg transition transform hover:scale-105 cursor-default duration-200"
                         style={{ animationDelay: `${0.1 + index * 0.05 + i * 0.02}s` }}
                       >
                         {skill}
@@ -105,7 +105,7 @@ const Skills = () => {
                 </div>
 
                 {/* Bottom accent bar */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500/0 via-indigo-500/50 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition duration-300" />
               </div>
             );
           })}
@@ -129,12 +129,12 @@ const Skills = () => {
             ].map((skill, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.6 + index * 0.05}s` }}>
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-semibold text-indigo-300">{skill.name}</span>
+                  <span className="text-sm font-semibold text-white">{skill.name}</span>
                   <span className="text-xs text-gray-500">{skill.level}%</span>
                 </div>
                 <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden border border-slate-600/30">
                   <div
-                    className="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full transition-all duration-1000 ease-out"
+                    className="h-full bg-gradient-to-r from-white to-gray-400 rounded-full transition-all duration-1000 ease-out"
                     style={{
                       width: `${skill.level}%`,
                       animation: `slideIn 1s ease-out ${0.6 + index * 0.05}s both`
@@ -150,14 +150,14 @@ const Skills = () => {
         <div className="mt-16 pt-12 border-t border-slate-700/30">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Achievements */}
-            <div className="p-6 bg-gradient-to-br from-green-500/10 to-slate-800/30 border border-green-500/30 rounded-xl animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <h3 className="text-lg font-bold text-green-300 mb-4 flex items-center gap-2">
+            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <CheckCircle size={20} />
                 Key Achievements
               </h3>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-1">✓</span>
+                  <span className="text-white font-bold mt-1">✓</span>
                   <span>$6000 Entrance Scholarship for strong academic performance</span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -176,14 +176,14 @@ const Skills = () => {
             </div>
 
             {/* Continuous Learning */}
-            <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-slate-800/30 border border-indigo-500/30 rounded-xl animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <h3 className="text-lg font-bold text-indigo-300 mb-4 flex items-center gap-2">
+            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl animate-fade-in" style={{ animationDelay: '0.8s' }}>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <Zap size={20} />
                 Currently Exploring
               </h3>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-indigo-400 font-bold mt-1">→</span>
+                  <span className="text-gray-300 font-bold mt-1">→</span>
                   <span>Advanced Large Language Models and prompt engineering</span>
                 </li>
                 <li className="flex items-start gap-3">
