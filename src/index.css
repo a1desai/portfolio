@@ -14,14 +14,29 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Garamond', 'Georgia', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f0620 0%, #1a0f2e 100%);
-  color: #e8e3f3;
+  background: linear-gradient(to bottom, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e0e0e0;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.4) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 code {
@@ -31,7 +46,7 @@ code {
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-500 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-violet-600 transition duration-300 ease-in-out transform hover:scale-105 relative overflow-hidden;
+    @apply px-6 py-3 bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 text-white rounded-lg font-semibold hover:from-indigo-600 hover:via-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 relative overflow-hidden;
   }
 
   .btn-primary::before {
@@ -40,40 +55,23 @@ code {
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-violet-500 text-violet-300 rounded-lg font-semibold hover:bg-violet-600/20 hover:text-white transition duration-300 ease-in-out;
-  }
-
-  .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-pink-300 to-rose-400 animate-fade-in;
+    @apply px-6 py-3 border border-indigo-400/40 text-indigo-300 rounded-lg font-semibold hover:border-indigo-300 hover:bg-indigo-500/10 transition duration-300 backdrop-blur-sm;
   }
 
   .card {
-    @apply bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur rounded-xl p-6 border border-violet-500/20 hover:border-violet-400/50 transition duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/20;
+    @apply bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-xl rounded-xl p-6 border border-slate-700/40 hover:border-indigo-500/50 transition duration-300 hover:shadow-lg hover:shadow-indigo-500/10;
   }
 
-  .glow-bg {
-    @apply relative overflow-hidden;
-  }
-
-  .glow-bg::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-violet-600/20 via-pink-600/20 to-violet-600/20 opacity-0 hover:opacity-100 transition duration-500 blur-3xl;
+  .glow-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-indigo-400 to-indigo-500;
   }
 
   .tech-badge {
-    @apply px-3 py-1 bg-violet-500/20 text-violet-300 rounded-full text-xs font-semibold border border-violet-500/40 backdrop-blur hover:border-violet-400 hover:bg-violet-500/30 transition duration-300 relative;
-  }
-
-  .shimmer {
-    @apply relative overflow-hidden;
-  }
-
-  .shimmer::after {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-20 -skew-x-12 translate-x-full hover:translate-x-0 transition duration-500;
+    @apply px-3 py-1 bg-indigo-500/10 border border-indigo-400/30 rounded-full text-xs text-indigo-300 hover:border-indigo-300 hover:bg-indigo-500/20 transition duration-300;
   }
 }
 
+/* AI/ML Themed Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -85,55 +83,10 @@ code {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px) rotateZ(0deg);
-  }
-  50% {
-    transform: translateY(-25px) rotateZ(2deg);
-  }
-}
-
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-
-@keyframes float-bounce {
-  0%, 100% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-15px) scale(1.05);
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
-  }
-}
-
 @keyframes slide-in-left {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -144,11 +97,67 @@ code {
 @keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), inset 0 0 40px rgba(139, 92, 246, 0.2);
+  }
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
   }
 }
 
@@ -164,84 +173,54 @@ code {
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes orbit {
-  from {
-    transform: rotate(0deg) translateX(100px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(100px) rotate(-360deg);
-  }
-}
-
 .animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float-slow 4s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 3.5s ease-in-out infinite;
-}
-
-.animate-float-bounce {
-  animation: float-bounce 2.5s ease-in-out infinite;
-}
-
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
+  animation: fade-in 0.6s ease-out forwards;
+  opacity: 0;
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 0.6s ease-out;
+  animation: slide-in-left 0.6s ease-out forwards;
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out;
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-float-up {
+  animation: float-up 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-scan-line {
+  animation: scan-line 3s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: flicker 0.15s infinite;
 }
 
 .animate-blob {
-  animation: blob 8s infinite;
+  animation: blob 7s infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* Gradient Animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-.animate-orbit {
-  animation: orbit 20s linear infinite;
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
 }
 
-/* Floating tech stack variations */
-.tech-float-1 {
-  animation: float 3s ease-in-out infinite;
-}
-
-.tech-float-2 {
-  animation: float-slow 4s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.tech-float-3 {
-  animation: float-reverse 3.5s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.tech-float-4 {
-  animation: float-bounce 2.5s ease-in-out infinite;
-  animation-delay: 1.5s;
+.animate-blob {
+  animation: blob 7s infinite;
 }

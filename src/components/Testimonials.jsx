@@ -1,70 +1,107 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Quote, Users } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      text: "Aryan was a pleasure to work with on our project, BeaverBuddy. With my imagination and his exceptional technical skills, he was able to make my visions become a reality with our app. He's a fantastic full stack software engineer with thorough knowledge of JavaScript frameworks.",
+      text: "Aryan was a pleasure to work with on our project, BeaverBuddy. With exceptional technical skills, he was able to transform ideas into reality with elegant code. He's a fantastic full-stack engineer with thorough knowledge of JavaScript frameworks and system design.",
       author: "Gaston Chung",
       role: "Co-Developer, BeaverBuddy",
-      initials: "GC",
+      company: "AI Health Solutions",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Gaston",
       rating: 5
     },
     {
-      text: "Working with Aryan on the BeaverBuddy project was fantastic. He brought both technical excellence and a strong user-centric mindset. Highly recommended!",
+      text: "Working with Aryan on BeaverBuddy was fantastic. He brought both technical excellence and a strong user-centric mindset. His ability to optimize complex systems and deliver production-ready code is exceptional. Highly recommended!",
       author: "James Chen",
-      role: "Product Manager, Mental Health App",
-      initials: "JC",
+      role: "Product Manager",
+      company: "Mental Health Tech",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
       rating: 5
     },
     {
-      text: "As Technology Director, Aryan demonstrated exceptional leadership, mentoring junior developers and architecting solutions that scaled beautifully. A true asset to any team.",
+      text: "As Technology Director at Google Developer Groups, Aryan demonstrated exceptional leadership, mentoring junior developers and architecting solutions that scaled beautifully. His ability to optimize systems and lead teams is truly remarkable.",
       author: "Rajesh Patel",
       role: "CEO, Tech Startup",
-      initials: "RP",
+      company: "TechVentures Inc",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh",
+      rating: 5
+    },
+    {
+      text: "Aryan's work on reinforcement learning systems was innovative and impactful. His deep understanding of neural networks and ability to implement complex algorithms sets him apart. A truly talented engineer with strong fundamentals.",
+      author: "Dr. Sarah Chen",
+      role: "AI Research Lead",
+      company: "AI Innovation Lab",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
       rating: 5
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-transparent via-violet-900/5 to-transparent relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-violet-600/5 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-600/5 rounded-full filter blur-3xl" />
-      </div>
+    <section id="testimonials" className="py-24 px-6 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-600/10 rounded-full filter blur-3xl opacity-30 animate-blob" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full filter blur-3xl opacity-20 animate-blob" style={{ animationDelay: '2s' }} />
 
-      <div className="max-w-6xl mx-auto">
-        <h2 className="section-title text-center mb-16">What Others Say</h2>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
+            <Users size={16} className="text-indigo-400" />
+            <span className="text-sm text-indigo-300 font-semibold">Social Proof</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="glow-text">Testimonials</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            What colleagues, mentors, and industry leaders say about working with me
+          </p>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <div
               key={index}
-              className="group card border-l-4 border-l-violet-500/50 hover:border-l-violet-400 hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300 transform hover:scale-105 animate-fade-in flex flex-col"
+              className="group card animate-fade-in hover:scale-105 duration-300 relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array(testimonial.rating).fill(0).map((_, i) => (
-                  <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
-                ))}
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-indigo-600/5 opacity-0 group-hover:opacity-100 rounded-xl transition duration-500 -z-10" />
+
+              {/* Quote icon */}
+              <div className="flex justify-between items-start mb-4">
+                <Quote className="text-indigo-400/50 group-hover:text-indigo-300/70 transition duration-300" size={32} />
+                {/* Rating */}
+                <div className="flex gap-1">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={16} className="text-yellow-400 fill-yellow-400 group-hover:scale-110 transition duration-300" />
+                  ))}
+                </div>
               </div>
 
-              {/* Quote */}
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+              {/* Content */}
+              <p className="text-gray-300 mb-6 leading-relaxed italic">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-700/50">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">{testimonial.initials}</span>
-                </div>
+              <div className="flex items-center gap-4 pt-6 border-t border-indigo-500/20">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.author}
+                  className="w-12 h-12 rounded-full border-2 border-indigo-400/50 group-hover:border-indigo-300/80 transition duration-300"
+                />
                 <div>
-                  <p className="font-semibold text-white text-sm">{testimonial.author}</p>
-                  <p className="text-gray-400 text-xs">{testimonial.role}</p>
+                  <p className="font-semibold text-indigo-300 group-hover:text-indigo-200 transition">{testimonial.author}</p>
+                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  <p className="text-xs text-indigo-400/70">{testimonial.company}</p>
                 </div>
+              </div>
+
+              {/* Scan line animation */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none rounded-xl overflow-hidden">
+                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-indigo-400 to-transparent" />
               </div>
             </div>
           ))}

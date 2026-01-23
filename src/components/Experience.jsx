@@ -1,144 +1,133 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, Briefcase, TrendingUp } from 'lucide-react';
+import React from 'react';
+import { Briefcase, MapPin, Code2 } from 'lucide-react';
 
 const Experience = () => {
-  const [expandedIndex, setExpandedIndex] = useState(0);
-
   const experiences = [
     {
       role: "Technology Director",
-      company: "Google Developer Groups on Campus",
-      period: "November 2025 – Present",
+      company: "Google Developer Groups",
       location: "Toronto, ON",
-      icon: "🚀",
+      period: "November 2025 - Present",
+      description: "Leading technical initiatives and mentoring 50+ students in web development and AI/ML technologies.",
       image: "/images/projects/GDSG.jpg",
       highlights: [
-        "Lead development team using Agile methodologies, improving delivery efficiency by 30%",
-        "Mentor 50+ students on web development (React, JavaScript, TypeScript)",
-        "Establish Git workflows and conduct peer code reviews"
-      ],
-      impact: "30% efficiency boost"
+        "Organizing technical workshops and seminars for developer community",
+        "Mentoring students in full-stack development and emerging technologies",
+        "Building connections between students and industry professionals"
+      ]
     },
     {
       role: "AI/ML Contributor",
       company: "Byte - SecureBYTE",
-      period: "September 2025 – Present",
       location: "Toronto, ON",
-      icon: "🤖",
+      period: "September 2025 - December 2025",
+      description: "Optimizing ML pipelines and developing intelligent security solutions using PyTorch and Hugging Face.",
       image: "/images/projects/Byte.jpg",
       highlights: [
-        "Optimized codebase processing workflows using Python and data analysis",
-        "Implemented automated testing reducing failures by 35% across 1000+ scans",
-        "Debugged and resolved API reliability issues, decreasing errors by 40%"
-      ],
-      impact: "35% failure reduction"
+        "Building and fine-tuning neural network models for security detection",
+        "Optimizing inference pipelines for production environments",
+        "Implementing reinforcement learning algorithms for adaptive security systems"
+      ]
     },
     {
       role: "Back End Developer",
-      company: "Quantum Science and Engineering Club",
-      period: "November 2025 – Present",
+      company: "Quantum Science & Engineering Club",
       location: "Toronto, ON",
-      icon: "⚛️",
+      period: "November 2025 - Present",
+      description: "Architecting scalable backend systems and APIs using Node.js, Express, and PostgreSQL.",
       image: "/images/projects/Qsec.jpg",
       highlights: [
-        "Developed backend architecture for quantum visualization platform",
-        "Implemented scalable database operations and API endpoints",
-        "Contributed to technical design decisions in collaborative environment"
-      ],
-      impact: "Production-ready system"
+        "Designing RESTful APIs with JWT authentication and role-based access control",
+        "Managing database architecture with PostgreSQL and Prisma ORM",
+        "Implementing CI/CD pipelines for automated deployment and testing"
+      ]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 px-6 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-violet-600/5 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-600/5 rounded-full filter blur-3xl" />
-      </div>
+    <section id="experience" className="py-24 px-6 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-indigo-600/10 rounded-full filter blur-3xl opacity-30" />
+      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-indigo-500/5 rounded-full filter blur-3xl opacity-20" />
 
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-16">
-          <h2 className="section-title">Professional Experience</h2>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            Building impactful solutions across AI/ML, full-stack development, and emerging technologies.
+      <div className="max-w-4xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="mb-16 text-center animate-fade-in">
+          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full">
+            <Briefcase size={16} className="text-indigo-400" />
+            <span className="text-sm text-indigo-300 font-semibold">Professional Journey</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="glow-text">Experience</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Driving innovation across full-stack development, AI/ML, and technical leadership
           </p>
         </div>
-        
-        <div className="space-y-6">
+
+        {/* Experience Timeline */}
+        <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div 
+            <div
               key={index}
-              onClick={() => setExpandedIndex(expandedIndex === index ? -1 : index)}
-              className="group cursor-pointer animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative animate-fade-in"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="card border-l-4 border-l-violet-500/50 group-hover:border-l-violet-400 hover:shadow-2xl hover:shadow-violet-500/20 transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                <div className="flex flex-col md:flex-row gap-0">
-                  {/* Image */}
+              {/* Timeline dot */}
+              <div className="absolute left-0 top-6 w-4 h-4 bg-indigo-500 rounded-full border-4 border-slate-900 shadow-lg shadow-indigo-500/50" />
+              
+              {/* Timeline line */}
+              {index !== experiences.length - 1 && (
+                <div className="absolute left-1.5 top-12 w-0.5 h-24 bg-gradient-to-b from-indigo-500/40 to-transparent" />
+              )}
+
+              {/* Card */}
+              <div className="ml-12 p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-indigo-500/50 rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-indigo-500/20">
+                <div className="flex flex-col lg:flex-row lg:gap-6 mb-4">
+                  {/* Logo/Image */}
                   {exp.image && (
-                    <div className="md:w-40 h-40 overflow-hidden flex-shrink-0">
+                    <div className="mb-4 lg:mb-0 flex-shrink-0">
                       <img 
                         src={exp.image} 
                         alt={exp.company}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="h-20 w-20 object-cover rounded-lg border border-indigo-500/30 shadow-lg"
                       />
                     </div>
                   )}
                   
                   {/* Content */}
-                  <div className="flex-1 p-8">
-                    <div className="flex items-start gap-4 mb-3">
-                      <div className="text-4xl flex-shrink-0">{exp.icon}</div>
-                      <div className="flex-1">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
-                          <h3 className="text-2xl font-bold text-white group-hover:text-violet-400 transition">
-                            {exp.role}
-                          </h3>
-                          <div className="flex items-center gap-2 text-xs md:text-sm text-green-400 font-semibold">
-                            <TrendingUp size={16} />
-                            {exp.impact}
-                          </div>
+                  <div className="flex-grow">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-indigo-300 group-hover:text-indigo-200 transition">
+                          {exp.role}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-2 text-gray-400">
+                          <span className="font-semibold text-indigo-400/80">{exp.company}</span>
+                          <span className="text-gray-600">•</span>
+                          <MapPin size={14} className="text-gray-500" />
+                          <span className="text-sm">{exp.location}</span>
                         </div>
-                        <p className="text-violet-400 font-semibold hover:text-pink-300 transition">
-                          {exp.company}
-                        </p>
                       </div>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4 text-gray-400 text-sm mb-4 ml-16">
-                      <div className="flex items-center gap-2">
-                        <Calendar size={16} className="text-violet-400" />
-                        <span>{exp.period}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin size={16} className="text-violet-400" />
-                        <span>{exp.location}</span>
+                      <div className="text-right">
+                        <div className="text-sm font-semibold text-indigo-400/70 bg-indigo-500/10 px-3 py-1 rounded-full inline-block">
+                          {exp.period}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Highlights - Expandable */}
-                    <div className={`overflow-hidden transition-all duration-300 ${expandedIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                      <ul className="space-y-2 pt-4 border-t border-slate-700/50 ml-16">
-                        {exp.highlights.map((highlight, i) => (
-                          <li 
-                            key={i} 
-                            className="flex gap-3 text-gray-300 text-sm animate-fade-in"
-                            style={{ animationDelay: `${i * 0.1}s` }}
-                          >
-                            <span className="text-violet-400 flex-shrink-0 font-bold">▸</span>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {exp.description}
+                    </p>
 
-                    {/* Show/Hide indicator */}
-                    <div className="mt-3 flex items-center gap-2 text-violet-400 text-sm font-semibold group-hover:text-pink-300 transition ml-16">
-                      <span>{expandedIndex === index ? 'Show less' : 'View details'}</span>
-                      <span className={`transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}>
-                        ▼
-                      </span>
+                    {/* Highlights */}
+                    <div className="space-y-2 ml-4">
+                      {exp.highlights.map((highlight, i) => (
+                        <div key={i} className="flex gap-3 text-sm text-gray-400">
+                          <Code2 size={14} className="text-indigo-500/60 flex-shrink-0 mt-1" />
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -147,22 +136,29 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Timeline view */}
-        <div className="mt-16 pt-12 border-t border-slate-700/50">
-          <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
-            <Briefcase size={24} className="text-violet-400" />
-            Career Timeline
-          </h3>
-          <div className="relative">
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 via-pink-500 to-rose-500 transform md:-translate-x-1/2" />
-            <div className="space-y-12 md:space-y-0">
-              {experiences.map((exp, index) => (
-                <div key={index} className={`relative pl-8 md:pl-0 ${index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:ml-1/2 md:pl-8'}`}>
-                  <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-violet-500 rounded-full transform -translate-x-1.5 md:translate-x--1.5 mt-2" />
-                  <p className="text-gray-400 text-sm">{exp.period}</p>
-                  <p className="text-white font-semibold">{exp.role}</p>
+        {/* Education Section */}
+        <div className="mt-16 pt-12 border-t border-slate-700/30">
+          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <h3 className="text-2xl font-bold mb-6">
+              <span className="glow-text">Education</span>
+            </h3>
+            <div className="p-6 bg-gradient-to-br from-indigo-500/10 to-slate-800/30 border border-indigo-500/30 rounded-xl">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h4 className="text-lg font-bold text-indigo-300 mb-1">
+                    Bachelor of Science in Computer Science (Co-op)
+                  </h4>
+                  <p className="text-gray-400 flex items-center gap-2">
+                    <span>Toronto Metropolitan University</span>
+                    <span className="text-gray-600">•</span>
+                    <span>Toronto, ON</span>
+                  </p>
+                  <p className="text-sm text-indigo-400/70 mt-2 flex gap-2 items-center">
+                    <span className="inline-block px-2 py-1 bg-indigo-500/20 rounded text-xs">2024 - 2029</span>
+                    <span className="inline-block px-2 py-1 bg-green-500/20 rounded text-xs text-green-300">$6,000 Entrance Scholarship</span>
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>

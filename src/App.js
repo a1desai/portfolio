@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <div className="App">
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <main className="pt-16">
+    <div className="App bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900 text-white min-h-screen">
+      <main>
         <Hero />
-        <About />
-        <Experience />
         <Projects />
+        <Experience />
         <Skills />
         <Testimonials />
         <Contact />
