@@ -1,7 +1,8 @@
-import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
 
 const Hero = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 relative pt-24 overflow-hidden bg-black" style={{ position: 'relative', zIndex: 1 }}>
       {/* Animated gradient orbs */}
@@ -14,15 +15,41 @@ const Hero = () => {
           <a href="/#" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 hover:from-gray-100 hover:to-white transition">
             Aryan<span className="text-white">.</span>
           </a>
-          <div className="flex gap-8 items-center text-sm">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-4 items-center text-sm">
             <a href="#about" className="text-gray-400 hover:text-white transition duration-300">About</a>
             <a href="#skills" className="text-gray-400 hover:text-white transition duration-300">Skills</a>
-            <a href="#education" className="text-gray-400 hover:text-white transition duration-300">Academic Background</a>
             <a href="#experience" className="text-gray-400 hover:text-white transition duration-300">Experience</a>
             <a href="#projects" className="text-gray-400 hover:text-white transition duration-300">Projects</a>
+            <a href="#education" className="text-gray-400 hover:text-white transition duration-300">Education</a>
+            <a href="#testimonials" className="text-gray-400 hover:text-white transition duration-300">Testimonials</a>
             <a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact</a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-neutral-800/50 bg-black/98 backdrop-blur-xl">
+            <div className="px-6 py-4 space-y-3">
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">About</a>
+              <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Skills</a>
+              <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Experience</a>
+              <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Projects</a>
+              <a href="#education" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Education</a>
+              <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Testimonials</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -50,7 +77,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-2xl text-gray-300 mb-6 animate-fade-in font-light" style={{ animationDelay: '0.3s' }}>
-          I'm Aryan, a Computer Science student interested in Software Engineering, AI/ML, and Cybersecurity.
+          Hey I'm Aryan, a Computer Science student interested in <span className="font-bold text-blue-400">Software Engineering, AI/ML, and Cybersecurity</span>.
         </p>
 
         <p className="text-xl text-gray-300 mb-12 font-light max-w-3xl mx-auto leading-relaxed text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
@@ -78,8 +105,8 @@ const Hero = () => {
           <a href="#projects" className="btn-primary group inline-flex items-center gap-2">
             View My Work <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
           </a>
-          <a href="#contact" className="btn-secondary inline-flex items-center gap-2">
-            Let's Connect <Mail size={18} />
+          <a href="/resume/Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
+            Resume <Mail size={18} />
           </a>
         </div>
 

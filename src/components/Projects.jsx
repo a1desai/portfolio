@@ -113,7 +113,7 @@ const Projects = () => {
       type: "FULL-STACK + LLM",
       description: "Comprehensive mental health platform designed for Canadian immigrants, featuring AI-powered cultural integration guidance, peer support communities, and personalized wellness resources using OpenAI API.",
       tech: ["TypeScript", "Next.js", "Express", "PostgreSQL", "Prisma", "JWT", "OpenAI API"],
-      github: "https://github.com/a1desai/BeaverBuddy",
+      github: "https://github.com/Build-your-bridge/BeaverBuddy",
       demo: "https://beaverbuddy.vercel.app",
       image: "/images/projects/BeaverBuddy.jpeg",
       video: "/videos/BeaverBuddy Video.mp4",
@@ -133,7 +133,7 @@ const Projects = () => {
       type: "REINFORCEMENT LEARNING",
       description: "Advanced autonomous racing AI system trained with reinforcement learning, utilizing deep neural networks trained on 10,000+ episodes in custom Godot game engine environment.",
       tech: ["Python", "PyTorch", "Hugging Face", "Godot", "GDScript", "Deep RL"],
-      github: "https://github.com/a1desai/AIRacer",
+      github: "https://github.com/Reinforcement-Learning-Game/RL-Racing-Game",
       demo: "https://github.com/a1desai/AIRacer",
       image: "/images/projects/AI Racer.webp",
       highlights: [
@@ -143,7 +143,7 @@ const Projects = () => {
         "Implemented experience replay buffer for efficient policy learning"
       ],
       date: "December 2025",
-      status: "Showcase",
+      status: "In Progress",
       isPersonal: true
     },
     {
@@ -152,7 +152,7 @@ const Projects = () => {
       type: "FULL-STACK WEB",
       description: "Intelligent spaced repetition flashcard system with ML-based content optimization using interval scheduling algorithm for accelerated, efficient learning.",
       tech: ["Java", "TypeScript", "React", "RESTful API", "Algorithm Design"],
-      github: "https://github.com/a1desai/FlashFocus",
+      github: "https://github.com/Flash-Focus/FlashFocus",
       demo: "https://flashfocus-app.vercel.app",
       image: "/images/projects/FlashFocus.jpeg",
       highlights: [

@@ -24,7 +24,7 @@ const About = () => {
           {/* Text Content */}
           <div className="space-y-6 animate-slide-in-left">
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a <span className="font-bold text-white">CS student at Toronto Metropolitan University</span> pursuing a passion for building intelligent, scalable systems. With experience spanning <span className="font-bold text-gray-200">full-stack development, AI/ML, and emerging technologies</span>, I've worked on projects ranging from mental health web applications to reinforcement learning systems.
+              I'm a <span className="font-bold text-blue-400">CS student at Toronto Metropolitan University</span> pursuing a passion for building intelligent, scalable systems. With experience spanning <span className="font-bold text-blue-400">full-stack development, AI/ML, and emerging technologies</span>, I've worked on projects ranging from mental health web applications to reinforcement learning systems.
             </p>
 
             <div className="flex items-start gap-3 p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition group">

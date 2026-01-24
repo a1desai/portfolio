@@ -31,7 +31,7 @@ const Education = () => {
         {/* Section Header */}
         <div className="mb-12 text-left animate-fade-in">
           <h2 className="text-4xl font-bold">
-            <span className="glow-text">Academic Background</span>
+            <span className="glow-text">Education</span>
           </h2>
         </div>
 
@@ -39,14 +39,16 @@ const Education = () => {
         <div className="space-y-6 relative pl-8">
           {education.map((edu, index) => (
             <div key={index} className="relative">
-              {/* Timeline dot */}
-              <div className="absolute -left-10 top-6 w-3 h-3 bg-white rounded-full border-2 border-black" />
-              
               <div
-                className="card animate-fade-in group"
+                className="card animate-fade-in group relative overflow-hidden"
                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                {/* Scan line effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none rounded-xl overflow-hidden">
+                  <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-white to-transparent" />
+                </div>
+
+                <div className="relative z-10 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-gray-100 transition mb-1">
                       {edu.degree}
@@ -66,19 +68,10 @@ const Education = () => {
                 </div>
 
                 {/* Highlights as green boxes */}
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-2 relative z-10">
                   {edu.highlights.map((highlight, idx) => (
                     <div key={idx} className="px-3 py-1 bg-green-500/20 border border-green-500/40 rounded text-green-400 text-xs font-semibold">
                       {highlight}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Coursework as orange boxes */}
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {edu.coursework.map((course, idx) => (
-                    <div key={idx} className="px-3 py-1 bg-orange-500/20 border border-orange-500/40 rounded text-orange-400 text-xs font-semibold">
-                      {course}
                     </div>
                   ))}
                 </div>
