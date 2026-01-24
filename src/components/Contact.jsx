@@ -59,8 +59,8 @@ const Contact = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-neutral-900/50 via-black to-neutral-900/50 border border-neutral-800/60 rounded-xl p-8 md:p-12 text-center mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <h3 className="text-2xl font-bold text-white mb-3">Ready to Build Something Great?</h3>
+        <div className="bg-gradient-to-r from-neutral-900/50 via-black to-neutral-900/50 border border-neutral-800/60 rounded-xl p-8 md:p-12 text-center mb-12 animate-fade-in" style={{ animationDelay: '0.4s', boxShadow: '0 0 40px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1)' }}>
+          <h3 className="text-2xl font-bold text-white mb-3">Ready to <span className="text-purple-400">Build Something Great</span>?</h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
             Whether you're interested in discussing innovative AI/ML solutions, need a full-stack developer, or want to collaborate on something exciting, I'd love to hear from you.
           </p>

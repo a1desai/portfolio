@@ -136,32 +136,7 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Education Section */}
-        <div className="mt-16 pt-12 border-t border-slate-700/30">
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-2xl font-bold mb-6">
-              <span className="glow-text">Education</span>
-            </h3>
-            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-1">
-                    Bachelor of Science in Computer Science (Co-op)
-                  </h4>
-                  <p className="text-gray-400 flex items-center gap-2">
-                    <span>Toronto Metropolitan University</span>
-                    <span className="text-gray-600">•</span>
-                    <span>Toronto, ON</span>
-                  </p>
-                  <p className="text-sm text-gray-300 mt-2 flex gap-2 items-center">
-                    <span className="inline-block px-2 py-1 bg-white/10 rounded text-xs">2024 - 2029</span>
-                    <span className="inline-block px-2 py-1 bg-green-500/20 rounded text-xs text-green-300">$6,000 Entrance Scholarship</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowRight, Lightbulb, Code, Zap } from 'lucide-react';
+import { ArrowRight, Lightbulb, Code, Zap, Briefcase, Users, Package, Sparkles } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { value: "3+", label: "Years", description: "Professional Experience" },
-    { value: "50+", label: "Students", description: "Mentored" },
-    { value: "10+", label: "Projects", description: "Shipped" },
-    { value: "100%", label: "Driven", description: "By Curiosity" }
+    { value: "3+", label: "Years", description: "Professional Experience", icon: Briefcase },
+    { value: "50+", label: "Students", description: "Mentored", icon: Users },
+    { value: "10+", label: "Projects", description: "Shipped", icon: Package },
+    { value: "100%", label: "Driven", description: "By Curiosity", icon: Sparkles }
   ];
 
   return (
@@ -17,10 +17,10 @@ const About = () => {
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-white/3 rounded-full filter blur-3xl" />
       </div>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="section-title">About Me</h2>
         
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-16 items-stretch">
           {/* Text Content */}
           <div className="space-y-6 animate-slide-in-left">
             <p className="text-gray-300 text-lg leading-relaxed">
@@ -50,11 +50,6 @@ const About = () => {
                 <p className="text-gray-400 text-sm">I'm particularly excited about the intersection of AI and software engineering—building systems that are intelligent and adaptive.</p>
               </div>
             </div>
-
-            <a href="#contact" className="btn-primary group inline-flex items-center mt-6">
-              Let's Connect
-              <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition" />
-            </a>
           </div>
 
           {/* Stats Grid */}
@@ -63,10 +58,14 @@ const About = () => {
               <div
                 key={index}
                 className="group card hover:shadow-2xl hover:shadow-white/10 relative overflow-hidden transform hover:scale-110 cursor-default animate-fade-in"
-                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+                style={{ 
+                  animationDelay: `${0.3 + index * 0.1}s`,
+                  boxShadow: '0 0 30px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)'
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                 <div className="relative z-10 text-center">
+                  <stat.icon className="w-8 h-8 text-white/60 mx-auto mb-3 group-hover:text-white/80 transition" />
                   <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-gray-100 to-white bg-clip-text text-transparent mb-2 group-hover:text-5xl transition-all">
                     {stat.value}
                   </div>
@@ -89,7 +88,10 @@ const About = () => {
               { title: "AI/ML Integration", desc: "Implementing machine learning models and AI APIs in production applications" },
               { title: "Clean Architecture", desc: "Writing maintainable, scalable code with strong focus on best practices" }
             ].map((item, i) => (
-              <div key={i} className="group card hover:shadow-xl animate-fade-in" style={{ animationDelay: `${0.6 + i * 0.1}s` }}>
+              <div key={i} className="group card hover:shadow-xl animate-fade-in" style={{ 
+                animationDelay: `${0.6 + i * 0.1}s`,
+                boxShadow: '0 0 30px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)'
+              }}>
                 <h4 className="text-white font-bold mb-2 group-hover:text-gray-200 transition">{item.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>

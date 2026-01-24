@@ -1,7 +1,111 @@
-import React from 'react';
-import { ExternalLink, Github, Code } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Github, Code, ArrowLeft, Play } from 'lucide-react';
+
+const ProjectDetail = ({ project, onBack }) => {
+  return (
+    <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 overflow-y-auto">
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        {/* Back Button */}
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-gray-400 hover:text-white transition mb-8 group"
+        >
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition" />
+          <span>Back to Projects</span>
+        </button>
+
+        {/* Hero Section with Video */}
+        <div className="mb-16">
+          <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-white/10 mb-8 bg-black">
+            {project.video ? (
+              <video 
+                src={project.video}
+                controls
+                autoPlay
+                className="w-full h-auto"
+                style={{ maxHeight: '500px', objectFit: 'cover' }}
+              />
+            ) : (
+              <img 
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover"
+              />
+            )}
+          </div>
+
+          {/* Header with Meta Info */}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <h1 className="text-5xl font-bold text-white">{project.title}</h1>
+                <span className="text-xs font-semibold text-white uppercase bg-green-500/20 px-3 py-1 rounded-full border border-green-400/40">
+                  {project.tag}
+                </span>
+              </div>
+              <p className="text-gray-400 text-base leading-relaxed">{project.description}</p>
+            </div>
+            
+            {/* Quick Info Cards */}
+            <div className="flex flex-col gap-3 min-w-fit">
+              <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-center hover:border-white/20 transition">
+                <p className="text-gray-500 text-xs uppercase tracking-wider mb-1">Status</p>
+                <p className="text-green-400 font-bold">{project.status}</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-center hover:border-white/20 transition">
+                <p className="text-gray-500 text-xs uppercase tracking-wider mb-1">Date</p>
+                <p className="text-white font-bold">{project.date}</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-center hover:border-white/20 transition">
+                <p className="text-gray-500 text-xs uppercase tracking-wider mb-1">Type</p>
+                <p className="text-blue-400 font-bold text-sm">{project.type}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-4">Technology Stack</h2>
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((tech) => (
+              <div
+                key={tech}
+                className="px-4 py-2 bg-gradient-to-r from-white/10 to-white/5 border border-white/20 rounded-lg text-sm text-gray-300 hover:border-white/40 transition transform hover:scale-105 duration-300"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key Achievements */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-6">Key Achievements</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.highlights.map((highlight, i) => (
+              <div
+                key={i}
+                className="group bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-lg p-5 hover:border-white/30 hover:shadow-lg hover:shadow-white/10 transition duration-300"
+              >
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 border border-green-400/40 flex items-center justify-center">
+                    <span className="text-green-400 text-sm font-bold">✓</span>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition">{highlight}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
     {
       title: "BeaverBuddy",
@@ -12,6 +116,7 @@ const Projects = () => {
       github: "https://github.com/a1desai/BeaverBuddy",
       demo: "https://beaverbuddy.vercel.app",
       image: "/images/projects/BeaverBuddy.jpeg",
+      video: "/videos/BeaverBuddy Video.mp4",
       highlights: [
         "Implemented secure JWT authentication with role-based access control",
         "Built RESTful APIs with Express.js processing 1000+ requests/day",
@@ -30,7 +135,7 @@ const Projects = () => {
       tech: ["Python", "PyTorch", "Hugging Face", "Godot", "GDScript", "Deep RL"],
       github: "https://github.com/a1desai/AIRacer",
       demo: "https://github.com/a1desai/AIRacer",
-      image: "/images/projects/AIRacer.jpg",
+      image: "/images/projects/AI Racer.webp",
       highlights: [
         "Designed and trained custom neural network policy using PPO algorithm",
         "Built Godot simulation environment with GDScript for ML training pipeline",
@@ -64,6 +169,10 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 px-6 relative overflow-hidden bg-black">
+      {selectedProject && (
+        <ProjectDetail project={selectedProject} onBack={() => setSelectedProject(null)} />
+      )}
+
       {/* Background elements */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/3 rounded-full filter blur-3xl opacity-20 animate-blob" />
       <div className="absolute top-1/2 right-0 w-80 h-80 bg-white/2 rounded-full filter blur-3xl opacity-15" />
@@ -170,15 +279,13 @@ const Projects = () => {
                 {/* Links */}
                 <div className="flex gap-3 flex-wrap">
                   {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => setSelectedProject(project)}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-400/40 hover:border-green-300/80 hover:bg-green-500/20 text-green-300 hover:text-green-200 rounded-lg transition transform hover:scale-105 duration-300"
                     >
                       <span className="text-sm font-medium">Demo</span>
                       <ExternalLink size={14} />
-                    </a>
+                    </button>
                   )}
                   <a
                     href={project.github}

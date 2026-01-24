@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Quote, Users } from 'lucide-react';
+import { Star, Quote, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -20,19 +20,11 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      text: "As Technology Director at Google Developer Groups, Aryan demonstrated exceptional leadership, mentoring junior developers and architecting solutions that scaled beautifully. His ability to optimize systems and lead teams is truly remarkable.",
-      author: "Rajesh Patel",
-      role: "CEO, Tech Startup",
-      company: "TechVentures Inc",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh",
-      rating: 5
-    },
-    {
-      text: "Aryan's work on reinforcement learning systems was innovative and impactful. His deep understanding of neural networks and ability to implement complex algorithms sets him apart. A truly talented engineer with strong fundamentals.",
-      author: "Dr. Sarah Chen",
-      role: "AI Research Lead",
-      company: "AI Innovation Lab",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      text: "Aryan was a pleasure to work with on FlashFocus, a Java-based, AI-powered flashcard application. He contributed heavily to building clean and intuitive user-facing features, helping translate complex logic into a smooth and usable interface. His work added a lot of polish to the project, and he was a dependable and collaborative teammate throughout development.",
+      author: "Sarim Khan",
+      role: "Co-Developer, FlashFocus",
+      company: "FlashFocus Project",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarim",
       rating: 5
     }
   ];
@@ -43,7 +35,7 @@ const Testimonials = () => {
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/3 rounded-full filter blur-3xl opacity-10 animate-blob" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/1 rounded-full filter blur-3xl opacity-5 animate-blob" style={{ animationDelay: '2s' }} />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
@@ -59,7 +51,16 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 relative">
+          {/* Left Arrow - Disabled */}
+          <button
+            disabled
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-3 rounded-full bg-white/5 border border-white/10 text-white/40 cursor-not-allowed"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -81,7 +82,7 @@ const Testimonials = () => {
               </div>
 
               {/* Content */}
-              <p className="text-gray-300 mb-6 leading-relaxed italic">
+              <p className="text-gray-300 mb-6 leading-relaxed italic text-sm">
                 "{testimonial.text}"
               </p>
 
@@ -105,6 +106,15 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
+
+          {/* Right Arrow - Disabled */}
+          <button
+            disabled
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-3 rounded-full bg-white/5 border border-white/10 text-white/40 cursor-not-allowed"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
     </section>

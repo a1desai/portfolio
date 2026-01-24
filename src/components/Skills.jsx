@@ -134,10 +134,11 @@ const Skills = () => {
                 </div>
                 <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden border border-slate-600/30">
                   <div
-                    className="h-full bg-gradient-to-r from-white to-gray-400 rounded-full transition-all duration-1000 ease-out"
+                    className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-1000 ease-out"
                     style={{
                       width: `${skill.level}%`,
-                      animation: `slideIn 1s ease-out ${0.6 + index * 0.05}s both`
+                      animation: `slideIn 1s ease-out ${0.6 + index * 0.05}s both`,
+                      boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5)'
                     }}
                   />
                 </div>
@@ -157,20 +158,20 @@ const Skills = () => {
               </h3>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-white font-bold mt-1">✓</span>
-                  <span>$6000 Entrance Scholarship for strong academic performance</span>
+                  <span className="text-green-400 font-bold mt-1">✓</span>
+                  <span><span className="text-blue-400 font-semibold">$4000 Winner</span> - Build Your Bridge competition for BeaverBuddy</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span>50+ students mentored in web development and AI/ML</span>
+                  <span><span className="text-blue-400 font-semibold">50+ students</span> mentored in web development and AI/ML</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span>35% reduction in test failures through systematic optimization</span>
+                  <span><span className="text-blue-400 font-semibold">35% reduction</span> in test failures through systematic optimization</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span>Production-ready systems deployed across 3 organizations</span>
+                  <span>Production-ready systems deployed across <span className="text-blue-400 font-semibold">3 organizations</span></span>
                 </li>
               </ul>
             </div>
@@ -183,7 +184,7 @@ const Skills = () => {
               </h3>
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-gray-300 font-bold mt-1">→</span>
+                  <span className="text-indigo-400 font-bold mt-1">→</span>
                   <span>Advanced Large Language Models and prompt engineering</span>
                 </li>
                 <li className="flex items-start gap-3">

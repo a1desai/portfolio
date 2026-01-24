@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="flex gap-8 items-center text-sm">
             <a href="#about" className="text-gray-400 hover:text-white transition duration-300">About</a>
             <a href="#skills" className="text-gray-400 hover:text-white transition duration-300">Skills</a>
-            <a href="#education" className="text-gray-400 hover:text-white transition duration-300">Education</a>
+            <a href="#education" className="text-gray-400 hover:text-white transition duration-300">Academic Background</a>
             <a href="#experience" className="text-gray-400 hover:text-white transition duration-300">Experience</a>
             <a href="#projects" className="text-gray-400 hover:text-white transition duration-300">Projects</a>
             <a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact</a>
@@ -27,7 +27,7 @@ const Hero = () => {
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Status text */}
-        <p className="text-2xl font-bold text-white mb-8 animate-fade-in tracking-wide">
+        <p className="text-2xl font-bold mb-8 tracking-wide animate-green-glow">
           Looking for 2026 Summer/Fall Internships
         </p>
 
@@ -97,15 +97,6 @@ const Hero = () => {
             className="p-3 bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 rounded-lg transition transform hover:scale-110 hover:shadow-lg hover:shadow-white/20 duration-300">
             <Mail size={20} className="text-white" />
           </a>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-20 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="animate-bounce">
-            <svg className="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
         </div>
       </div>
     </section>
