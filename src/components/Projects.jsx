@@ -128,25 +128,6 @@ const Projects = () => {
       isPersonal: true
     },
     {
-      title: "AI Racer",
-      tag: "Deep Learning",
-      type: "REINFORCEMENT LEARNING",
-      description: "Advanced autonomous racing AI system trained with reinforcement learning, utilizing deep neural networks trained on 10,000+ episodes in custom Godot game engine environment.",
-      tech: ["Python", "PyTorch", "Hugging Face", "Godot", "GDScript", "Deep RL"],
-      github: "https://github.com/Reinforcement-Learning-Game/RL-Racing-Game",
-      demo: "https://github.com/a1desai/AIRacer",
-      image: "/images/projects/AI Racer.webp",
-      highlights: [
-        "Designed and trained custom neural network policy using PPO algorithm",
-        "Built Godot simulation environment with GDScript for ML training pipeline",
-        "Achieved 95% win rate against rule-based baselines after optimization",
-        "Implemented experience replay buffer for efficient policy learning"
-      ],
-      date: "December 2025",
-      status: "In Progress",
-      isPersonal: true
-    },
-    {
       title: "FlashFocus",
       tag: "Education",
       type: "FULL-STACK WEB",
@@ -163,6 +144,46 @@ const Projects = () => {
       ],
       date: "June 2025",
       status: "Completed",
+      isPersonal: true
+    },
+    {
+      title: "SentinAI",
+      tag: "Hackathon",
+      type: "AI/ML",
+      description: "Intelligent sentiment analysis and monitoring system built during the AI Hackathon, featuring real-time data processing and advanced NLP capabilities.",
+      tech: ["Python", "Machine Learning", "NLP", "Data Processing"],
+      github: "https://github.com/AI-Hackathon11/hacks/blob/main/README.md",
+      demo: "https://github.com/AI-Hackathon11/hacks",
+      image: "/images/projects/SentinAI.png",
+      video: "/videos/SentinAI_Demo.mp4",
+      highlights: [
+        "Developed advanced sentiment analysis algorithms using state-of-the-art NLP models",
+        "Implemented real-time data monitoring and processing pipeline",
+        "Built scalable system for handling large-scale text analysis",
+        "Achieved high accuracy in sentiment classification across multiple languages"
+      ],
+      date: "January 2026",
+      status: "Completed",
+      tagColor: "purple",
+      isPersonal: false
+    },
+    {
+      title: "AI Racer",
+      tag: "Deep Learning",
+      type: "REINFORCEMENT LEARNING",
+      description: "Advanced autonomous racing AI system trained with reinforcement learning, utilizing deep neural networks trained on 10,000+ episodes in custom Godot game engine environment.",
+      tech: ["Python", "PyTorch", "Hugging Face", "Godot", "GDScript", "Deep RL"],
+      github: "https://github.com/Reinforcement-Learning-Game/RL-Racing-Game",
+      demo: "https://github.com/a1desai/AIRacer",
+      image: "/images/projects/AI Racer.webp",
+      highlights: [
+        "Designed and trained custom neural network policy using PPO algorithm",
+        "Built Godot simulation environment with GDScript for ML training pipeline",
+        "Achieved 95% win rate against rule-based baselines after optimization",
+        "Implemented experience replay buffer for efficient policy learning"
+      ],
+      date: "December 2025",
+      status: "In Progress",
       isPersonal: true
     }
   ];
@@ -211,6 +232,11 @@ const Projects = () => {
                   <div className="text-xs bg-white/10 px-3 py-1 rounded-full text-gray-200 border border-white/20">
                     {project.date}
                   </div>
+                  {project.tagColor === 'purple' && (
+                    <div className="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-300 border border-purple-500/40 font-semibold">
+                      {project.tag}
+                    </div>
+                  )}
                   {project.isPersonal && (
                     <div className="text-xs bg-orange-500/20 px-3 py-1 rounded-full text-orange-400 border border-orange-500/40 font-semibold">
                       Personal
@@ -235,14 +261,9 @@ const Projects = () => {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                   <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition">
-                        {project.title}
-                      </h3>
-                      <span className="text-xs font-semibold text-white uppercase bg-white/20 px-3 py-1 rounded-full border border-white/30 group-hover:border-white/50 transition">
-                        {project.tag}
-                      </span>
-                    </div>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-gray-100 transition mb-2">
+                      {project.title}
+                    </h3>
                     <p className="text-xs text-gray-500 uppercase tracking-wider group-hover:text-white transition">
                       {project.type}
                     </p>
