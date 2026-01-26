@@ -75,7 +75,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-2xl text-gray-300 mb-6 animate-fade-in font-light" style={{ animationDelay: '0.3s' }}>
-          Hey I'm Aryan, a Computer Science student interested in <span className="font-bold text-blue-400">Software Engineering, AI/ML, and Cybersecurity</span>.
+          Hey I'm Aryan, a Computer Science student interested in <span className="font-bold text-blue-400">Software Engineering, AI/ML, and Cybersecurity</span>. ✨
         </p>
 
         <p className="text-xl text-gray-300 mb-12 font-light max-w-3xl mx-auto leading-relaxed text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
