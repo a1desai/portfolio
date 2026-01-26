@@ -7,7 +7,7 @@ const Testimonials = () => {
       text: "Aryan was a pleasure to work with on our project, BeaverBuddy. With exceptional technical skills, he was able to transform ideas into reality with elegant code. He's a fantastic full-stack engineer with thorough knowledge of JavaScript frameworks and system design.",
       author: "Gaston Chung",
       role: "Co-Developer, BeaverBuddy",
-      company: "AI Health Solutions",
+      company: "AI Mental Health App",
       image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Gaston",
       rating: 5
     },
