@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Code, ArrowLeft, Play } from 'lucide-react';
+import { ExternalLink, Github, Code, ArrowLeft } from 'lucide-react';
 
 const ProjectDetail = ({ project, onBack }) => {
   return (

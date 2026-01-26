@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const Education = () => {
   const education = [

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Menu, X } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
 const Hero = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

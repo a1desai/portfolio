@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Lightbulb, Code, Zap, Briefcase, Users, Package, Sparkles } from 'lucide-react';
+import { Lightbulb, Code, Zap, Briefcase, Users, Package, Sparkles } from 'lucide-react';
 
 const About = () => {
   const stats = [
