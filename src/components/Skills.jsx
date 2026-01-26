@@ -120,12 +120,12 @@ const Skills = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Full-Stack Development", level: 95 },
-              { name: "AI/ML Engineering", level: 85 },
-              { name: "System Design", level: 80 },
-              { name: "Cloud Architecture", level: 75 },
-              { name: "DevOps & CI/CD", level: 80 },
-              { name: "Data Structures & Algorithms", level: 85 }
+              { name: "Full-Stack Development", level: 85 },
+              { name: "AI/ML Engineering", level: 75 },
+              { name: "System Design", level: 70 },
+              { name: "Cloud Architecture", level: 65 },
+              { name: "DevOps & CI/CD", level: 70 },
+              { name: "Data Structures & Algorithms", level: 80 }
             ].map((skill, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.6 + index * 0.05}s` }}>
                 <div className="flex justify-between mb-2">
@@ -159,7 +159,7 @@ const Skills = () => {
               <ul className="space-y-3 text-gray-300 text-sm">
                 <li className="flex items-start gap-3">
                   <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span><span className="text-blue-400 font-semibold">$4000 Winner</span> - Build Your Bridge competition for BeaverBuddy</span>
+                  <span><span className="text-blue-400 font-semibold">$1000 Winner</span> - Build Your Bridge competition for BeaverBuddy</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-green-400 font-bold mt-1">✓</span>

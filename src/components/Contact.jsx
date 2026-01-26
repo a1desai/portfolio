@@ -61,16 +61,27 @@ const Contact = () => {
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-neutral-900/50 via-black to-neutral-900/50 border border-neutral-800/60 rounded-xl p-8 md:p-12 text-center mb-12 animate-fade-in" style={{ animationDelay: '0.4s', boxShadow: '0 0 40px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1)' }}>
           <h3 className="text-2xl font-bold text-white mb-3">Ready to <span className="text-purple-400">Build Something Great</span>?</h3>
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Whether you're interested in discussing innovative AI/ML solutions, need a full-stack developer, or want to collaborate on something exciting, I'd love to hear from you.
           </p>
-          <a
-            href="mailto:Aryandes20@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition transform hover:scale-105 duration-300 shadow-lg shadow-white/30"
-          >
-            <Send size={18} />
-            Send an Email
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:Aryandes20@gmail.com"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-gray-200 text-black font-semibold rounded-lg transition transform hover:scale-105 duration-300 shadow-lg shadow-white/30"
+            >
+              <Mail size={18} />
+              Send an Email
+            </a>
+            <a
+              href="https://calendly.com/aryandes20/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-500/20 border border-blue-400/60 hover:bg-blue-500/30 hover:border-blue-300 text-blue-300 font-semibold rounded-lg transition transform hover:scale-105 duration-300 shadow-lg shadow-blue-500/20"
+            >
+              <Phone size={18} />
+              Schedule a Call
+            </a>
+          </div>
         </div>
 
         {/* Social Links */}

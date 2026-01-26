@@ -136,6 +136,7 @@ const Projects = () => {
       github: "https://github.com/Flash-Focus/FlashFocus",
       demo: "https://flashfocus-app.vercel.app",
       image: "/images/projects/FlashFocus.jpeg",
+      video: "/videos/FlashFocus Demo.mp4",
       highlights: [
         "Implemented spaced repetition algorithm for optimized retention intervals",
         "Built full-stack application with Java backend and React frontend",
@@ -150,17 +151,17 @@ const Projects = () => {
       title: "SentinAI",
       tag: "Hackathon",
       type: "AI/ML",
-      description: "Intelligent sentiment analysis and monitoring system built during the AI Hackathon, featuring real-time data processing and advanced NLP capabilities.",
-      tech: ["Python", "Machine Learning", "NLP", "Data Processing"],
+      description: "Intelligent legal document analyzer built during the AI Hackathon that identifies red flags, unfair clauses, and potential risks in terms of service, privacy policies, and legal contracts to protect user rights.",
+      tech: ["Python", "Machine Learning", "NLP", "Legal Document Processing", "AI Analysis"],
       github: "https://github.com/AI-Hackathon11/hacks/blob/main/README.md",
       demo: "https://github.com/AI-Hackathon11/hacks",
       image: "/images/projects/SentinAI.png",
       video: "/videos/SentinAI_Demo.mp4",
       highlights: [
-        "Developed advanced sentiment analysis algorithms using state-of-the-art NLP models",
-        "Implemented real-time data monitoring and processing pipeline",
-        "Built scalable system for handling large-scale text analysis",
-        "Achieved high accuracy in sentiment classification across multiple languages"
+        "Implemented transformer-based NLP model with custom tokenization for legal document classification",
+        "Built risk scoring algorithm using pattern recognition and semantic analysis for clause detection",
+        "Developed RESTful API backend with efficient text processing pipeline for real-time document analysis",
+        "Integrated machine learning model with 90%+ accuracy in identifying unfair legal provisions"
       ],
       date: "January 2026",
       status: "Completed",
@@ -171,19 +172,19 @@ const Projects = () => {
       title: "AI Racer",
       tag: "Deep Learning",
       type: "REINFORCEMENT LEARNING",
-      description: "Advanced autonomous racing AI system trained with reinforcement learning, utilizing deep neural networks trained on 10,000+ episodes in custom Godot game engine environment.",
+      description: "🚀 COMING SOON: Revolutionary autonomous racing AI system trained with cutting-edge reinforcement learning, utilizing advanced deep neural networks trained on 10,000+ episodes in custom Godot game engine environment. Stay tuned for something extraordinary.",
       tech: ["Python", "PyTorch", "Hugging Face", "Godot", "GDScript", "Deep RL"],
       github: "https://github.com/Reinforcement-Learning-Game/RL-Racing-Game",
       demo: "https://github.com/a1desai/AIRacer",
       image: "/images/projects/AI Racer.webp",
       highlights: [
-        "Designed and trained custom neural network policy using PPO algorithm",
-        "Built Godot simulation environment with GDScript for ML training pipeline",
-        "Achieved 95% win rate against rule-based baselines after optimization",
-        "Implemented experience replay buffer for efficient policy learning"
+        "Designing next-gen neural network policy with advanced PPO algorithm",
+        "Building state-of-the-art Godot simulation environment with optimized training pipeline",
+        "Targeting 98%+ win rate against advanced baselines",
+        "Implementing advanced experience replay and curriculum learning techniques"
       ],
-      date: "December 2025",
-      status: "In Progress",
+      date: "Coming Soon",
+      status: "Coming Soon",
       isPersonal: true
     }
   ];
@@ -229,9 +230,11 @@ const Projects = () => {
               <div className="relative z-10">
                 {/* Badges at top right */}
                 <div className="flex gap-3 flex-wrap justify-end mb-4">
-                  <div className="text-xs bg-white/10 px-3 py-1 rounded-full text-gray-200 border border-white/20">
-                    {project.date}
-                  </div>
+                  {project.status !== "Coming Soon" && (
+                    <div className="text-xs bg-white/10 px-3 py-1 rounded-full text-gray-200 border border-white/20">
+                      {project.date}
+                    </div>
+                  )}
                   {project.tagColor === 'purple' && (
                     <div className="text-xs bg-purple-500/20 px-3 py-1 rounded-full text-purple-300 border border-purple-500/40 font-semibold">
                       {project.tag}
@@ -299,7 +302,7 @@ const Projects = () => {
 
                 {/* Links */}
                 <div className="flex gap-3 flex-wrap">
-                  {project.demo && (
+                  {project.demo && project.status !== "Coming Soon" && (
                     <button
                       onClick={() => setSelectedProject(project)}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-400/40 hover:border-green-300/80 hover:bg-green-500/20 text-green-300 hover:text-green-200 rounded-lg transition transform hover:scale-105 duration-300"
@@ -308,16 +311,18 @@ const Projects = () => {
                       <ExternalLink size={14} />
                     </button>
                   )}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 text-white rounded-lg transition transform hover:scale-105 duration-300"
-                  >
-                    <Github size={16} />
-                    <span className="text-sm font-medium">View Code</span>
-                    <ExternalLink size={14} />
-                  </a>
+                  {project.status !== "Coming Soon" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 text-white rounded-lg transition transform hover:scale-105 duration-300"
+                    >
+                      <Github size={16} />
+                      <span className="text-sm font-medium">View Code</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
