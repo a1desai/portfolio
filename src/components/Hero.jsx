@@ -11,18 +11,17 @@ const Hero = () => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800/50 bg-gradient-to-r from-black/95 to-black/95 backdrop-blur-xl">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/#" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 hover:from-gray-100 hover:to-white transition">
-            Aryan<span className="text-white">.</span>
+            Aryan
           </a>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-4 items-center text-sm">
+          <div className="hidden md:flex gap-8 items-center text-sm ml-auto">
             <a href="#about" className="text-gray-400 hover:text-white transition duration-300">About</a>
             <a href="#skills" className="text-gray-400 hover:text-white transition duration-300">Skills</a>
             <a href="#experience" className="text-gray-400 hover:text-white transition duration-300">Experience</a>
             <a href="#projects" className="text-gray-400 hover:text-white transition duration-300">Projects</a>
-            <a href="#education" className="text-gray-400 hover:text-white transition duration-300">Education</a>
             <a href="#testimonials" className="text-gray-400 hover:text-white transition duration-300">Testimonials</a>
             <a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact</a>
           </div>
@@ -30,7 +29,7 @@ const Hero = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition"
+            className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition ml-auto"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -44,7 +43,6 @@ const Hero = () => {
               <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Skills</a>
               <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Experience</a>
               <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Projects</a>
-              <a href="#education" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Education</a>
               <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Testimonials</a>
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-gray-400 hover:text-white transition duration-300 py-2">Contact</a>
             </div>
