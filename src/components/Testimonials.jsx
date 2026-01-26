@@ -88,11 +88,6 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-4 pt-6 border-t border-white/20">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className="w-12 h-12 rounded-full border-2 border-white/30 group-hover:border-white/60 transition duration-300"
-                />
                 <div>
                   <p className="font-semibold text-white group-hover:text-gray-200 transition">{testimonial.author}</p>
                   <p className="text-sm text-gray-400">{testimonial.role}</p>
