@@ -1,0 +1,59 @@
+[
+  {
+    "role": "Software Engineer",
+    "company": "FlipPilot",
+    "location": "Remote",
+    "period": "March 2026 – Present",
+    "description": "Building retail extraction pipelines and AI-powered deal-analysis workflows in a TypeScript/PostgreSQL production environment.",
+    "image": "/images/projects/FlipPilot.png",
+    "website": "https://www.flippilot.ca/",
+    "github": null,
+    "highlights": [
+      "Built a retail extraction pipeline scraping 7+ US marketplaces using a 3-phase fetch strategy with JSON-LD and microdata parsing",
+      "Engineered an 8-stage automated workflow integrating AI-powered item analysis, price estimation, and multi-channel deal alerts logged to PostgreSQL"
+    ]
+  },
+  {
+    "role": "AI Project Lead",
+    "company": "Computing Councils of Canada (CCubed)",
+    "location": "Remote",
+    "period": "March 2025 – Present",
+    "description": "Leading AI initiatives across 10+ Canadian universities, reaching 500+ computing students through structured club partnerships.",
+    "image": "/images/projects/CCubed.jpeg",
+    "website": null,
+    "github": null,
+    "highlights": [
+      "Scaled CCubed's pilot AI program to 10+ Canadian universities, reaching 500+ computing students through structured club partnerships",
+      "Built an adversarial cybersecurity sandbox using LangGraph, orchestrating autonomous Red/Blue Team AI agents in isolated Docker environments evaluated against 40 real-world CVEs",
+      "Delivered an autonomous systems security research initiative end-to-end as tech lead, coordinating milestone delivery with the Director of AI"
+    ]
+  },
+  {
+    "role": "AI/ML Contributor",
+    "company": "BYTE – TMU Computing Club",
+    "location": "Toronto, ON",
+    "period": "July 2025 – Present",
+    "description": "Contributing to SecureBYTE AI, a modular multi-LLM platform supporting 9+ providers with unified configuration, benchmarking, and streaming.",
+    "image": "/images/projects/Byte.jpg",
+    "website": null,
+    "github": "https://github.com/a1desai/SecureBYTE_AI",
+    "highlights": [
+      "Contributed to SecureBYTE AI, a modular multi-LLM platform supporting 9+ providers with unified configuration, interactive benchmarking, and streaming support",
+      "Built an output validation module that detects oversized code blocks in LLM responses, improving safety guardrails across the club's AI development pipeline"
+    ]
+  },
+  {
+    "role": "Technology Director",
+    "company": "Google Developer Groups on Campus",
+    "location": "Toronto, ON",
+    "period": "November 2025 – Present",
+    "description": "Designing and delivering technical workshops in React, TypeScript, and GCP while leading the frontend rebuild of the SolutionHacks hackathon website.",
+    "image": "/images/projects/GDSG.jpg",
+    "website": null,
+    "github": null,
+    "highlights": [
+      "Designed and delivered 3+ technical workshops in React, TypeScript, and GCP, onboarding 30+ first-year students to full-stack and AI development",
+      "Led frontend rebuild of the SolutionHacks hackathon website in React and TypeScript, shipping registration and resource-sharing features for 200+ participants"
+    ]
+  }
+]

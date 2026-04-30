@@ -1,145 +1,153 @@
-import React from 'react';
-import { Briefcase, MapPin, Code2 } from 'lucide-react';
+import { MapPin, Code2, ExternalLink, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
+import experienceData from '../data/experience.json';
 
-const Experience = () => {
-  const experiences = [
-    {
-      role: "Technology Director",
-      company: "Google Developer Groups",
-      location: "Toronto, ON",
-      period: "November 2025 - Present",
-      description: "Leading technical initiatives and mentoring 50+ students in web development and AI/ML technologies.",
-      image: "/images/projects/GDSG.jpg",
-      highlights: [
-        "Organizing technical workshops and seminars for developer community",
-        "Mentoring students in full-stack development and emerging technologies",
-        "Building connections between students and industry professionals"
-      ]
-    },
-    {
-      role: "AI/ML Contributor",
-      company: "Byte - SecureBYTE",
-      location: "Toronto, ON",
-      period: "September 2025 - December 2025",
-      description: "Optimizing ML pipelines and developing intelligent security solutions using PyTorch and Hugging Face.",
-      image: "/images/projects/Byte.jpg",
-      highlights: [
-        "Building and fine-tuning neural network models for security detection",
-        "Optimizing inference pipelines for production environments",
-        "Implementing reinforcement learning algorithms for adaptive security systems"
-      ]
-    },
-    {
-      role: "Back End Developer",
-      company: "Quantum Science & Engineering Club",
-      location: "Toronto, ON",
-      period: "November 2025 - Present",
-      description: "Architecting scalable backend systems and APIs using Node.js, Express, and PostgreSQL.",
-      image: "/images/projects/Qsec.jpg",
-      highlights: [
-        "Designing RESTful APIs with JWT authentication and role-based access control",
-        "Managing database architecture with PostgreSQL and Prisma ORM",
-        "Implementing CI/CD pipelines for automated deployment and testing"
-      ]
-    }
-  ];
-
-  return (
-    <section id="experience" className="py-24 px-6 relative overflow-hidden bg-black">
-      {/* Background elements */}
-      <div className="absolute top-1/2 -left-40 w-80 h-80 bg-white/3 rounded-full filter blur-3xl opacity-10" />
-      <div className="absolute bottom-0 -right-40 w-80 h-80 bg-white/1 rounded-full filter blur-3xl opacity-5" />
-
-      <div className="max-w-4xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="mb-16 text-center animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
-            <Briefcase size={16} className="text-white" />
-            <span className="text-sm text-white font-semibold">Professional Journey</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="glow-text">Experience</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Driving innovation across full-stack development, AI/ML, and technical leadership
-          </p>
+const Experience = () => (
+  <section id="experience" className="page-section px-6 py-28 relative" style={{ background: 'var(--bg)' }}>
+    <div className="max-w-4xl mx-auto w-full">
+      {/* Header */}
+      <motion.div
+        className="mb-16"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="flex items-center gap-4 mb-6">
+          <span className="font-mono text-xs text-[#bbb] dark:text-[#444] tracking-[0.2em]">03</span>
+          <div className="h-px w-10 bg-black/10 dark:bg-white/10" />
+          <span className="text-xs text-[#999] dark:text-[#666] uppercase tracking-[0.18em] font-semibold">Experience</span>
         </div>
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight" style={{ color: 'var(--text)' }}>
+          Where I've worked.
+        </h2>
+      </motion.div>
 
-        {/* Experience Timeline */}
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <div
+      {/* Cards */}
+      <div className="space-y-6">
+        {experienceData.map((exp, index) => {
+          const fromLeft = index % 2 === 0;
+          return (
+            <motion.div
               key={index}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+              className="group rounded-3xl border shadow-sm overflow-hidden relative"
+              style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+              initial={{ opacity: 0, x: fromLeft ? -70 : 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+              whileHover={{ y: -4, boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }}
             >
-              {/* Timeline dot */}
-              <div className="absolute left-0 top-6 w-4 h-4 bg-white rounded-full border-4 border-slate-900 shadow-lg shadow-white/30" />
-              
-              {/* Timeline line */}
-              {index !== experiences.length - 1 && (
-                <div className="absolute left-1.5 top-12 w-0.5 h-24 bg-gradient-to-b from-white/40 to-transparent" />
-              )}
+              {/* Gradient left accent */}
+              <motion.div
+                className="absolute left-0 top-0 bottom-0 w-1 rounded-l-3xl"
+                style={{
+                  background: [
+                    'linear-gradient(to bottom, #3b82f6, #6366f1)',
+                    'linear-gradient(to bottom, #8b5cf6, #ec4899)',
+                    'linear-gradient(to bottom, #10b981, #3b82f6)',
+                    'linear-gradient(to bottom, #f59e0b, #ef4444)',
+                  ][index % 4],
+                  transformOrigin: 'top',
+                }}
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.08, ease: 'easeOut' }}
+              />
 
-              {/* Card */}
-              <div className="ml-12 p-6 bg-neutral-900/50 border border-neutral-800/60 hover:border-neutral-700 rounded-xl transition-all duration-300 group-hover:shadow-lg group-hover:shadow-white/5">
-                <div className="flex flex-col lg:flex-row lg:gap-6 mb-4">
-                  {/* Logo/Image */}
-                  {exp.image && (
-                    <div className="mb-4 lg:mb-0 flex-shrink-0">
-                      <img 
-                        src={exp.image} 
+              <div className="p-7 md:p-8 pl-10">
+                {/* Header row */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+                  <div className="flex items-start gap-4">
+                    {exp.image && (
+                      <motion.img
+                        src={exp.image}
                         alt={exp.company}
-                        className="h-20 w-20 object-cover rounded-lg border border-white/20 shadow-lg"
+                        className="w-14 h-14 rounded-2xl border border-black/8 dark:border-white/8 object-cover shadow-sm flex-shrink-0"
+                        whileHover={{ scale: 1.08, rotate: 2 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
                       />
-                    </div>
-                  )}
-                  
-                  {/* Content */}
-                  <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
-                      <div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-gray-100 transition">
-                          {exp.role}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-2 text-gray-400">
-                          <span className="font-semibold text-gray-300">{exp.company}</span>
-                          <span className="text-gray-600">•</span>
-                          <MapPin size={14} className="text-gray-500" />
-                          <span className="text-sm">{exp.location}</span>
-                        </div>
+                    )}
+                    <div>
+                      <h3 className="text-xl font-extrabold tracking-tight mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition duration-200" style={{ color: 'var(--text)' }}>
+                        {exp.role}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[#888] dark:text-[#666]">
+                        <span className="font-semibold text-[#444] dark:text-[#aaa]">{exp.company}</span>
+                        <span className="text-[#ddd] dark:text-[#333]">·</span>
+                        <MapPin size={12} className="text-[#ccc] dark:text-[#555]" />
+                        <span>{exp.location}</span>
                       </div>
-                      <div className="text-right">
-                        <div className="text-sm font-semibold text-gray-300 bg-white/10 px-3 py-1 rounded-full inline-block">
-                          {exp.period}
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    {/* Highlights */}
-                    <div className="space-y-2 ml-4">
-                      {exp.highlights.map((highlight, i) => (
-                        <div key={i} className="flex gap-3 text-sm text-gray-400">
-                          <Code2 size={14} className="text-white/60 flex-shrink-0 mt-1" />
-                          <span>{highlight}</span>
-                        </div>
-                      ))}
                     </div>
                   </div>
+                  <span className="self-start text-xs font-bold text-[#888] dark:text-[#666] bg-black/5 dark:bg-white/5 border border-black/8 dark:border-white/8 px-3 py-1.5 rounded-full whitespace-nowrap">
+                    {exp.period}
+                  </span>
                 </div>
+
+                <p className="text-[15px] mb-5 leading-relaxed" style={{ color: 'var(--text-sub)' }}>{exp.description}</p>
+
+                {/* Highlights */}
+                <motion.div
+                  className="space-y-2.5 mb-5"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: index * 0.06 + 0.25 } } }}
+                >
+                  {exp.highlights.map((h, i) => (
+                    <motion.div
+                      key={i}
+                      className="flex gap-3 text-[15px]"
+                      style={{ color: 'var(--text-sub)' }}
+                      variants={{
+                        hidden: { opacity: 0, x: fromLeft ? -16 : 16 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+                      }}
+                    >
+                      <Code2 size={14} className="text-blue-400 flex-shrink-0 mt-1" />
+                      <span>{h}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* External links */}
+                {(exp.website || exp.github) && (
+                  <div className="flex gap-2.5 flex-wrap">
+                    {exp.website && (
+                      <motion.a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-400 rounded-xl text-xs font-bold"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        <ExternalLink size={12} /> Website
+                      </motion.a>
+                    )}
+                    {exp.github && (
+                      <motion.a
+                        href={exp.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-[#444] dark:text-[#bbb] rounded-xl text-xs font-bold"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        <Github size={14} /> GitHub <ExternalLink size={12} />
+                      </motion.a>
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
-        </div>
-
-
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Experience;

@@ -1,119 +1,124 @@
 import React from 'react';
-import { Star, Quote, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      text: "Aryan was a pleasure to work with on our project, BeaverBuddy. With exceptional technical skills, he was able to transform ideas into reality with elegant code. He's a fantastic full-stack engineer with thorough knowledge of JavaScript frameworks and system design.",
-      author: "Gaston Chung",
-      role: "Co-Developer, BeaverBuddy",
-      company: "AI Mental Health App",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Gaston",
-      rating: 5
-    },
-    {
-      text: "Aryan was both a consistent and hard worker, willing to spend time and effort learning in areas outside his prior experience. He inventively applied his newfound knowledge to come up with creative solutions for the problems that we faced. He is a great partner to work with, and from working on our project, he gained an intuitive understanding of neural networks and the Godot engine.",
-      author: "Joshua Song",
-      role: "Co-Developer, AI Racer",
-      company: "AI Racer Project",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Joshua",
-      rating: 5
-    },
-    {
-      text: "Aryan was a pleasure to work with on FlashFocus, a Java-based, AI-powered flashcard application. He contributed heavily to building clean and intuitive user-facing features, helping translate complex logic into a smooth and usable interface. His work added a lot of polish to the project, and he was a dependable and collaborative teammate throughout development.",
-      author: "Sarim Khan",
-      role: "Co-Developer, FlashFocus",
-      company: "FlashFocus Project",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarim",
-      rating: 5
-    }
-  ];
+const testimonials = [
+  {
+    text: "Aryan was a pleasure to work with on BeaverBuddy. With exceptional technical skills, he was able to transform ideas into reality with elegant code. He's a fantastic full-stack engineer with thorough knowledge of JavaScript frameworks and system design.",
+    author: 'Gaston Chung',
+    role: 'Co-Developer',
+    company: 'BeaverBuddy',
+    seed: 'Gaston',
+    rating: 5,
+  },
+  {
+    text: "Aryan was both a consistent and hard worker, willing to spend time and effort learning in areas outside his prior experience. He inventively applied his newfound knowledge to come up with creative solutions. He's a great partner to work with, and gained an intuitive understanding of neural networks and the Godot engine.",
+    author: 'Joshua Song',
+    role: 'Co-Developer',
+    company: 'ApexRL',
+    seed: 'Joshua',
+    rating: 5,
+  },
+  {
+    text: "Aryan was a pleasure to work with on FlashFocus. He contributed heavily to building clean and intuitive user-facing features, helping translate complex logic into a smooth and usable interface. His work added a lot of polish to the project, and he was a dependable and collaborative teammate throughout.",
+    author: 'Sarim Khan',
+    role: 'Co-Developer',
+    company: 'FlashFocus',
+    seed: 'Sarim',
+    rating: 5,
+  },
+];
 
-  return (
-    <section id="testimonials" className="py-24 px-6 relative overflow-hidden bg-black">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-white/3 rounded-full filter blur-3xl opacity-10 animate-blob" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/1 rounded-full filter blur-3xl opacity-5 animate-blob" style={{ animationDelay: '2s' }} />
+const Testimonials = () => (
+  <section
+    id="testimonials"
+    className="page-section px-6 py-28 relative"
+    style={{ background: 'var(--bg-alt)' }}
+  >
+    <div className="max-w-5xl mx-auto w-full">
+      {/* Section label */}
+      <motion.div
+        className="flex items-center gap-4 mb-14"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="font-mono text-xs text-[#bbb] dark:text-[#444] tracking-[0.2em]">07</span>
+        <div className="h-px w-10 bg-black/10 dark:bg-white/10" />
+        <span className="text-xs text-[#999] dark:text-[#666] uppercase tracking-[0.18em] font-semibold">Social Proof</span>
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
-            <Users size={16} className="text-white" />
-            <span className="text-sm text-white font-semibold">Social Proof</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="glow-text">Testimonials</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            What colleagues, mentors, and industry leaders say about working with me
-          </p>
-        </div>
+      <motion.h2
+        className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4"
+        style={{ color: 'var(--text)' }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        What people say.
+      </motion.h2>
+      <motion.p
+        className="text-[#888] dark:text-[#666] mb-14 text-lg"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.15 }}
+      >
+        Colleagues I've built things with.
+      </motion.p>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6 relative">
-          {/* Left Arrow - Disabled */}
-          <button
-            disabled
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-3 rounded-full bg-white/5 border border-white/10 text-white/40 cursor-not-allowed"
-            aria-label="Previous testimonial"
+      <div className="grid md:grid-cols-3 gap-5">
+        {testimonials.map((t, i) => (
+          <motion.div
+            key={i}
+            className="rounded-3xl p-7 border shadow-sm flex flex-col relative overflow-hidden group"
+            style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+            initial={{ opacity: 0, y: 40, x: i % 2 === 0 ? -30 : 30 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -5, boxShadow: '0 20px 60px rgba(0,0,0,0.1)' }}
           >
-            <ChevronLeft size={20} />
-          </button>
-
-          {testimonials.map((testimonial, index) => (
+            {/* Colored top accent */}
             <div
-              key={index}
-              className="group card animate-fade-in hover:scale-105 duration-300 relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 rounded-xl transition duration-500 -z-10" />
+              className="absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition duration-300"
+              style={{
+                background: ['linear-gradient(90deg,#3b82f6,#6366f1)', 'linear-gradient(90deg,#8b5cf6,#ec4899)', 'linear-gradient(90deg,#10b981,#3b82f6)'][i],
+              }}
+            />
 
-              {/* Quote icon */}
-              <div className="flex justify-between items-start mb-4">
-                <Quote className="text-white/30 group-hover:text-white/50 transition duration-300" size={32} />
-                {/* Rating */}
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="text-yellow-400 fill-yellow-400 group-hover:scale-110 transition duration-300" />
-                  ))}
-                </div>
-              </div>
+            {/* Stars */}
+            <div className="flex gap-1 mb-5">
+              {Array.from({ length: t.rating }).map((_, j) => (
+                <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
+              ))}
+            </div>
 
-              {/* Content */}
-              <p className="text-gray-300 mb-6 leading-relaxed italic text-sm">
-                "{testimonial.text}"
-              </p>
+            <Quote size={28} className="text-black/10 dark:text-white/10 mb-4 flex-shrink-0" />
 
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-white/20">
-                <div>
-                  <p className="font-semibold text-white group-hover:text-gray-200 transition">{testimonial.author}</p>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
-                  <p className="text-xs text-gray-500">{testimonial.company}</p>
-                </div>
-              </div>
+            <p className="text-[15px] leading-relaxed italic flex-1 mb-7" style={{ color: 'var(--text-sub)' }}>
+              "{t.text}"
+            </p>
 
-              {/* Scan line animation */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none rounded-xl overflow-hidden">
-                <div className="absolute inset-0 animate-scan-line opacity-20 bg-gradient-to-b from-white to-transparent" />
+            {/* Author */}
+            <div className="flex items-center gap-3 pt-5 border-t border-black/[0.06] dark:border-white/[0.06]">
+              <img
+                src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${t.seed}`}
+                alt={t.author}
+                className="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 border border-black/8 dark:border-white/8 flex-shrink-0"
+              />
+              <div>
+                <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{t.author}</p>
+                <p className="text-xs text-[#999] dark:text-[#666]">{t.role} · {t.company}</p>
               </div>
             </div>
-          ))}
-
-          {/* Right Arrow - Disabled */}
-          <button
-            disabled
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-3 rounded-full bg-white/5 border border-white/10 text-white/40 cursor-not-allowed"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Testimonials;

@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "icon": "Code2",
+      "title": "Languages",
+      "description": "Core programming languages for software development",
+      "skills": ["Python", "TypeScript", "JavaScript", "Java", "C++", "SQL", "Bash", "GDScript"]
+    },
+    {
+      "icon": "Zap",
+      "title": "Web Development",
+      "description": "Modern full-stack technologies and frameworks",
+      "skills": ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "HTML/CSS", "REST APIs", "Prisma ORM"]
+    },
+    {
+      "icon": "Brain",
+      "title": "AI/ML Technologies",
+      "description": "Deep learning and machine learning frameworks",
+      "skills": ["PyTorch", "TensorFlow", "Hugging Face", "Reinforcement Learning", "Neural Networks", "LLMs", "OpenAI API"]
+    },
+    {
+      "icon": "Database",
+      "title": "Data & Databases",
+      "description": "Database design and data management",
+      "skills": ["PostgreSQL", "SQL", "Prisma", "Supabase", "Vector Embeddings", "Query Optimization"]
+    },
+    {
+      "icon": "Cloud",
+      "title": "Tools & DevOps",
+      "description": "Development tools and cloud platforms",
+      "skills": ["Git/GitHub", "Docker", "CI/CD", "AWS", "GCP", "Firebase", "Jest", "Agile/Scrum"]
+    },
+    {
+      "icon": "Zap",
+      "title": "Specializations",
+      "description": "Advanced technical expertise",
+      "skills": ["JWT Authentication", "Unit Testing", "API Design", "System Architecture", "Algorithm Design", "Performance Optimization"]
+    }
+  ],
+  "proficiency": [
+    { "name": "Full-Stack Development", "level": 85 },
+    { "name": "AI/ML Engineering", "level": 75 },
+    { "name": "System Design", "level": 70 },
+    { "name": "Cloud Architecture", "level": 65 },
+    { "name": "DevOps & CI/CD", "level": 70 },
+    { "name": "Data Structures & Algorithms", "level": 80 }
+  ],
+  "achievements": [
+    { "label": "$4,500 Winner", "detail": "Build Your Bridge competition for BeaverBuddy" },
+    { "label": "50+ students", "detail": "mentored in web development and AI/ML" },
+    { "label": "35% reduction", "detail": "in scan failures through systematic optimization" },
+    { "label": "Production systems", "detail": "deployed across 5+ organizations" }
+  ],
+  "exploring": [
+    "Advanced Large Language Models and prompt engineering",
+    "Distributed systems and microservices architecture",
+    "Kubernetes and advanced container orchestration",
+    "Quantum computing algorithms and quantum ML"
+  ]
+}

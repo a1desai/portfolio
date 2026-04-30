@@ -1,220 +1,192 @@
 import React from 'react';
 import { Zap, Database, Brain, Cloud, Code2, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import skillsData from '../data/skills.json';
+import GitHubActivity from './GitHubActivity';
+
+const ICON_MAP = { Zap, Database, Brain, Cloud, Code2 };
+
+const MARQUEE_TECHS = [
+  'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'PyTorch',
+  'LangChain', 'LangGraph', 'PostgreSQL', 'Docker', 'AWS', 'Supabase',
+  'Temporal', 'Express.js', 'Prisma', 'GCP', 'Drizzle ORM', 'JWT',
+];
+
+const TechMarquee = () => (
+  <div className="overflow-hidden py-5 border-y border-black/[0.07] dark:border-white/[0.07] my-14">
+    <div className="flex gap-10 animate-marquee whitespace-nowrap">
+      {[...MARQUEE_TECHS, ...MARQUEE_TECHS].map((tech, i) => (
+        <span
+          key={i}
+          className="text-sm font-semibold text-[#bbb] dark:text-[#555] hover:text-[#555] dark:hover:text-[#bbb] transition duration-200 cursor-default flex items-center gap-2.5"
+        >
+          <span className="w-1 h-1 rounded-full bg-[#ddd] dark:bg-[#444]" />
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+);
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      icon: Code2,
-      title: "Languages",
-      description: "Core programming languages for software development",
-      skills: ["Python", "TypeScript", "JavaScript", "Java", "C++", "SQL", "Bash", "GDScript"]
-    },
-    {
-      icon: Zap,
-      title: "Web Development",
-      description: "Modern full-stack technologies and frameworks",
-      skills: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "HTML/CSS", "REST APIs", "Prisma ORM"]
-    },
-    {
-      icon: Brain,
-      title: "AI/ML Technologies",
-      description: "Deep learning and machine learning frameworks",
-      skills: ["PyTorch", "TensorFlow", "Hugging Face", "Reinforcement Learning", "Neural Networks", "LLMs", "OpenAI API"]
-    },
-    {
-      icon: Database,
-      title: "Data & Databases",
-      description: "Database design and data management",
-      skills: ["PostgreSQL", "SQL", "Prisma", "Data Modeling", "Query Optimization", "Database Design"]
-    },
-    {
-      icon: Cloud,
-      title: "Tools & DevOps",
-      description: "Development tools and cloud platforms",
-      skills: ["Git/GitHub", "Docker", "CI/CD", "AWS", "GCP", "Firebase", "Jest", "Agile/Scrum"]
-    },
-    {
-      icon: Zap,
-      title: "Specializations",
-      description: "Advanced technical expertise",
-      skills: ["JWT Authentication", "Unit Testing", "API Design", "System Architecture", "Algorithm Design", "Performance Optimization"]
-    }
-  ];
+  const skillCategories = skillsData.categories.map(c => ({
+    ...c,
+    icon: ICON_MAP[c.icon] || Code2,
+  }));
 
   return (
-    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-black">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-white/3 rounded-full filter blur-3xl opacity-10" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-white/1 rounded-full filter blur-3xl opacity-5" />
+    <section id="skills" className="page-section py-28 px-6 relative" style={{ background: 'var(--bg-alt)' }}>
+      <div className="max-w-5xl mx-auto relative z-10">
+        {/* Section label */}
+        <motion.div
+          className="flex items-center gap-4 mb-14"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="font-mono text-xs text-[#bbb] dark:text-[#444] tracking-[0.2em]">02</span>
+          <div className="h-px w-10 bg-black/10 dark:bg-white/10" />
+          <span className="text-xs text-[#999] dark:text-[#666] uppercase tracking-[0.18em] font-semibold">Skills</span>
+        </motion.div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 border border-white/20 rounded-full">
-            <Zap size={16} className="text-white" />
-            <span className="text-sm text-white font-semibold">Technical Arsenal</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="glow-text">Skills & Expertise</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Comprehensive technical skillset spanning full-stack development, AI/ML, and cloud infrastructure
-          </p>
-        </div>
+        <motion.h2
+          className="text-3xl md:text-4xl font-black tracking-tight mb-4"
+          style={{ color: 'var(--text)' }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          What I work with
+        </motion.h2>
+        <motion.p
+          className="text-[#888] dark:text-[#666] mb-0 text-base"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+        >
+          Full-stack to AI/ML — here's the stack I reach for.
+        </motion.p>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <TechMarquee />
+
+        {/* Skill category cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
+        >
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="group p-6 bg-neutral-900/50 border border-neutral-800/60 hover:border-neutral-700 rounded-xl transition-all duration-300 animate-fade-in overflow-hidden"
-                style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+                className="group rounded-2xl p-6 border shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+                variants={{
+                  hidden: { opacity: 0, y: 24 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+                }}
+                whileHover={{ y: -3 }}
               >
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-white/20 rounded-lg group-hover:bg-white/30 transition">
-                      <Icon size={20} className="text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-gray-100 transition">
-                      {category.title}
-                    </h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-black/5 dark:bg-white/5 rounded-xl group-hover:bg-blue-50 dark:group-hover:bg-blue-950/40 transition duration-300">
+                    <Icon size={18} className="text-[#555] dark:text-[#aaa] group-hover:text-blue-600 dark:group-hover:text-blue-400 transition" />
                   </div>
-
-                  <p className="text-sm text-gray-400 mb-4 group-hover:text-gray-300 transition">
-                    {category.description}
-                  </p>
-
-                  {/* Skills */}
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, i) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/20 text-xs text-white rounded-lg transition transform hover:scale-105 cursor-default duration-200"
-                        style={{ animationDelay: `${0.1 + index * 0.05 + i * 0.02}s` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wide" style={{ color: 'var(--text)' }}>
+                    {category.title}
+                  </h3>
                 </div>
 
-                {/* Bottom accent bar */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-white/0 via-white/50 to-white/0 opacity-0 group-hover:opacity-100 transition duration-300" />
-              </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <motion.span
+                      key={skill}
+                      className="px-2.5 py-1 bg-black/[0.04] dark:bg-white/[0.04] border border-black/8 dark:border-white/8 text-xs text-[#555] dark:text-[#aaa] rounded-lg hover:bg-black/8 dark:hover:bg-white/8 transition duration-200 cursor-default"
+                      whileHover={{ scale: 1.06 }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        {/* Proficiency Levels */}
-        <div className="pt-12 border-t border-slate-700/30">
-          <div className="text-center mb-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <h3 className="text-2xl font-bold mb-2">Proficiency Levels</h3>
-            <p className="text-gray-400">Areas of expertise and depth</p>
-          </div>
+        {/* Achievements + Exploring */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+          <motion.div
+            className="rounded-2xl p-6 border shadow-sm"
+            style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            whileHover={{ y: -2, boxShadow: '0 8px 30px rgba(0,0,0,0.08)' }}
+          >
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-5 flex items-center gap-2" style={{ color: 'var(--text)' }}>
+              <CheckCircle size={14} className="text-green-500" />
+              Key Achievements
+            </h3>
+            <ul className="space-y-3">
+              {skillsData.achievements.map((a, i) => (
+                <motion.li
+                  key={i}
+                  className="flex items-start gap-3 text-sm"
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.15 + i * 0.07 }}
+                >
+                  <span className="text-green-500 font-bold mt-0.5 flex-shrink-0">✓</span>
+                  <span style={{ color: 'var(--text-sub)' }}>
+                    <span className="font-semibold" style={{ color: 'var(--text)' }}>{a.label}</span> — {a.detail}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Full-Stack Development", level: 85 },
-              { name: "AI/ML Engineering", level: 75 },
-              { name: "System Design", level: 70 },
-              { name: "Cloud Architecture", level: 65 },
-              { name: "DevOps & CI/CD", level: 70 },
-              { name: "Data Structures & Algorithms", level: 80 }
-            ].map((skill, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.6 + index * 0.05}s` }}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-semibold text-white">{skill.name}</span>
-                  <span className="text-xs text-gray-500">{skill.level}%</span>
-                </div>
-                <div className="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden border border-slate-600/30">
-                  <div
-                    className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full transition-all duration-1000 ease-out"
-                    style={{
-                      width: `${skill.level}%`,
-                      animation: `slideIn 1s ease-out ${0.6 + index * 0.05}s both`,
-                      boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5)'
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Key Achievements */}
-        <div className="mt-16 pt-12 border-t border-slate-700/30">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Achievements */}
-            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <CheckCircle size={20} />
-                Key Achievements
-              </h3>
-              <ul className="space-y-3 text-gray-300 text-sm">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span><span className="text-blue-400 font-semibold">$1000 Winner</span> - Build Your Bridge competition for BeaverBuddy</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span><span className="text-blue-400 font-semibold">50+ students</span> mentored in web development and AI/ML</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span><span className="text-blue-400 font-semibold">35% reduction</span> in test failures through systematic optimization</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-400 font-bold mt-1">✓</span>
-                  <span>Production-ready systems deployed across <span className="text-blue-400 font-semibold">3 organizations</span></span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Continuous Learning */}
-            <div className="p-6 bg-gradient-to-br from-white/10 to-slate-800/30 border border-white/20 rounded-xl animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <Zap size={20} />
-                Currently Exploring
-              </h3>
-              <ul className="space-y-3 text-gray-300 text-sm">
-                <li className="flex items-start gap-3">
-                  <span className="text-indigo-400 font-bold mt-1">→</span>
-                  <span>Advanced Large Language Models and prompt engineering</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-indigo-400 font-bold mt-1">→</span>
-                  <span>Distributed systems and microservices architecture</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-indigo-400 font-bold mt-1">→</span>
-                  <span>Kubernetes and advanced container orchestration</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-indigo-400 font-bold mt-1">→</span>
-                  <span>Quantum computing algorithms and quantum ML</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <motion.div
+            className="rounded-2xl p-6 border shadow-sm"
+            style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.18 }}
+            whileHover={{ y: -2, boxShadow: '0 8px 30px rgba(0,0,0,0.08)' }}
+          >
+            <h3 className="text-xs font-bold uppercase tracking-wider mb-5 flex items-center gap-2" style={{ color: 'var(--text)' }}>
+              <Zap size={14} className="text-blue-500" />
+              Currently Exploring
+            </h3>
+            <ul className="space-y-3">
+              {skillsData.exploring.map((item, i) => (
+                <motion.li
+                  key={i}
+                  className="flex items-start gap-3 text-sm"
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.22 + i * 0.07 }}
+                >
+                  <span className="text-blue-500 font-bold mt-0.5 flex-shrink-0">→</span>
+                  <span style={{ color: 'var(--text-sub)' }}>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes slideIn {
-          from {
-            width: 0;
-          }
-          to {
-            width: var(--width);
-          }
-        }
-      `}</style>
+      <GitHubActivity />
     </section>
   );
 };

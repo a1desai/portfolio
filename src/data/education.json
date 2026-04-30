@@ -1,0 +1,19 @@
+[
+  {
+    "degree": "Bachelor of Science in Computer Science (Co-op)",
+    "institution": "Toronto Metropolitan University",
+    "location": "Toronto, ON",
+    "period": "2024 - 2029",
+    "image": "/images/projects/Tmu.jpeg",
+    "highlights": [
+      "$6,000 Entrance Scholarship",
+      "Dean's List - Consecutive semesters"
+    ],
+    "coursework": [
+      "Data Structures",
+      "Algorithms",
+      "Machine Learning",
+      "Cloud Computing"
+    ]
+  }
+]

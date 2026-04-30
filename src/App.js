@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { ThemeProvider } from './ThemeContext';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -9,22 +10,30 @@ import Education from './components/Education';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TerminalEgg from './components/TerminalEgg';
+import SectionNav from './components/SectionNav';
+import ChatBot from './components/ChatBot';
 
 function App() {
   return (
-    <div className="App bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900 text-white min-h-screen">
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App min-h-screen" style={{ background: 'var(--bg)', color: 'var(--text)' }}>
+        <SectionNav />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
+        <TerminalEgg />
+        <ChatBot />
+      </div>
+    </ThemeProvider>
   );
 }
 
