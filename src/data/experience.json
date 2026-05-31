@@ -5,9 +5,9 @@
     "location": "Remote",
     "period": "May 2026 – Present",
     "description": "Building AI agents and full-stack features for an EdTech platform in a TypeScript/Python/React production environment.",
-    "image": null,
+    "image": "/images/projects/FSCHOOLAI.jpeg",
     "website": null,
-    "github": null,
+    "github": "https://github.com/johannaresh/NeuroAGI-Demo",
     "highlights": [
       "Built a Chrome extension streamlining file upload workflows for students, reducing upload time by ~70% and eliminating 4+ manual steps per submission",
       "Contributed to design and development of 3+ AI agents including research, writing, and monitoring agents, improving platform automation coverage across core student workflows"
@@ -21,7 +21,7 @@
     "description": "Built retail extraction pipelines and AI-powered deal-analysis workflows in a TypeScript/PostgreSQL production environment.",
     "image": "/images/projects/FlipPilot.png",
     "website": "https://www.flippilot.ca/",
-    "github": null,
+    "github": "https://github.com/AnasKhan0607/FlipPilot",
     "highlights": [
       "Built a backend retail extraction pipeline with RESTful API integrations across 7+ US marketplaces via a 3-phase fetch strategy, cutting lookup time from ~5 min to under 30s (~90% reduction)",
       "Engineered an 8-stage automated workflow surfacing 50+ deals/day via AI-powered price analysis and multi-channel alerts, with all results persisted to a PostgreSQL database"
@@ -35,7 +35,7 @@
     "description": "Leading AI initiatives across 10+ Canadian universities, reaching 500+ computing students through structured club partnerships.",
     "image": "/images/projects/CCubed.jpeg",
     "website": null,
-    "github": null,
+    "github": "https://github.com/computingcouncilsofcanada/ai-advarsarial-agents",
     "highlights": [
       "Scaled CCubed's pilot AI program to 10+ Canadian universities, reaching 500+ computing students through structured club partnerships",
       "Built an adversarial cybersecurity sandbox using LangGraph, orchestrating autonomous Red/Blue Team AI agents across 40 real-world CVEs, achieving ~85% average threat detection rate and reducing manual evaluation time by 60%",
@@ -64,7 +64,7 @@
     "description": "Designing and delivering technical workshops in React, TypeScript, and GCP while leading the frontend rebuild of the SolutionHacks hackathon website.",
     "image": "/images/projects/GDSG.jpg",
     "website": null,
-    "github": null,
+    "github": "https://github.com/garv1908/gdg-hackathon-web",
     "highlights": [
       "Designed and delivered 3+ technical workshops in React, TypeScript, and GCP, onboarding 30+ first-year students to full-stack and AI development",
       "Led frontend rebuild of the SolutionHacks hackathon website in React and TypeScript, shipping registration and resource-sharing features for 200+ participants"

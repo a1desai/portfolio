@@ -243,7 +243,7 @@ const Hero = () => {
               <p className="text-[#666] dark:text-[#999]">
                 3rd Year Computer Science @{' '}
                 <span className="font-semibold text-[#0D0D0D] dark:text-[#F0EDE8]">TMU</span>{' '}
-                · <span className="font-semibold text-blue-600 dark:text-blue-400">Open to Agentic AI Roles</span>
+                · <span className="font-semibold text-blue-600 dark:text-blue-400">Open to AI &amp; Full-Stack Internships</span>
               </p>
             </motion.div>
 

@@ -1,0 +1,65 @@
+[
+  {
+    "title": "1st Place — Build Your Bridge",
+    "issuer": "Build Your Bridge Hackathon",
+    "date": "December 2025",
+    "description": "Won $4,500 (1st place out of 30+ teams) for BeaverBuddy — a full-stack mental health and immigration platform for Canadian newcomers.",
+    "image": "/images/projects/Build a Bridge Certificate.jpeg",
+    "tag": "Hackathon Winner",
+    "tagColor": "purple"
+  },
+  {
+    "title": "Market Master",
+    "issuer": "OpenClaw AI Toronto Hackathon",
+    "date": "May 2026",
+    "description": "Awarded for outstanding market strategy and product viability in Disputr — autonomous chargeback defense agent built out of 500+ builders.",
+    "image": "/images/projects/MarketMastery.png",
+    "tag": "Award",
+    "tagColor": "purple"
+  },
+  {
+    "title": "x402 Master",
+    "issuer": "OpenClaw AI Toronto Hackathon",
+    "date": "May 2026",
+    "description": "Awarded for best use of the x402 payment protocol — engineered x402 integration on GOAT Network mainnet for autonomous dispute processing in Disputr.",
+    "image": "/images/projects/X402 Master .png",
+    "tag": "Award",
+    "tagColor": "purple"
+  },
+  {
+    "title": "UX Master",
+    "issuer": "OpenClaw AI Toronto Hackathon",
+    "date": "May 2026",
+    "description": "Awarded for superior user experience design in Disputr — human-centered UI with human-in-the-loop guardrails for high-risk autonomous actions.",
+    "image": "/images/projects/UX Master.png",
+    "tag": "Award",
+    "tagColor": "purple"
+  },
+  {
+    "title": "Security Master",
+    "issuer": "OpenClaw AI Toronto Hackathon",
+    "date": "May 2026",
+    "description": "Awarded for exceptional security architecture in Disputr — zero data retention design and autonomous agent safety controls.",
+    "image": "/images/projects/Security Master.png",
+    "tag": "Award",
+    "tagColor": "purple"
+  },
+  {
+    "title": "Dean's List — Faculty of Science",
+    "issuer": "Toronto Metropolitan University",
+    "date": "2024/2025 · 2025/2026",
+    "description": "Awarded Dean's List recognition for 2 consecutive years in the Faculty of Science, maintaining a 3.5+ GPA throughout.",
+    "image": "/images/projects/Dean's award.jpeg",
+    "tag": "Academic Award",
+    "tagColor": "blue"
+  },
+  {
+    "title": "Work-Integrated Learning Certificate",
+    "issuer": "Riipen",
+    "date": "2025",
+    "description": "Completed a work-integrated learning experience through Riipen, collaborating with industry partners on real-world technical projects.",
+    "image": "/images/projects/Riipen Certficate.jpeg",
+    "tag": "Certificate",
+    "tagColor": "blue"
+  }
+]
