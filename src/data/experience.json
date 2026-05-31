@@ -1,16 +1,30 @@
 [
   {
-    "role": "Software Engineer",
+    "role": "Full Stack Developer Intern",
+    "company": "FschoolAI",
+    "location": "Remote",
+    "period": "May 2026 – Present",
+    "description": "Building AI agents and full-stack features for an EdTech platform in a TypeScript/Python/React production environment.",
+    "image": null,
+    "website": null,
+    "github": null,
+    "highlights": [
+      "Built a Chrome extension streamlining file upload workflows for students, reducing upload time by ~70% and eliminating 4+ manual steps per submission",
+      "Contributed to design and development of 3+ AI agents including research, writing, and monitoring agents, improving platform automation coverage across core student workflows"
+    ]
+  },
+  {
+    "role": "Software Engineer Intern",
     "company": "FlipPilot",
     "location": "Remote",
-    "period": "March 2026 – Present",
-    "description": "Building retail extraction pipelines and AI-powered deal-analysis workflows in a TypeScript/PostgreSQL production environment.",
+    "period": "February 2026 – May 2026",
+    "description": "Built retail extraction pipelines and AI-powered deal-analysis workflows in a TypeScript/PostgreSQL production environment.",
     "image": "/images/projects/FlipPilot.png",
     "website": "https://www.flippilot.ca/",
     "github": null,
     "highlights": [
-      "Built a retail extraction pipeline scraping 7+ US marketplaces using a 3-phase fetch strategy with JSON-LD and microdata parsing",
-      "Engineered an 8-stage automated workflow integrating AI-powered item analysis, price estimation, and multi-channel deal alerts logged to PostgreSQL"
+      "Built a backend retail extraction pipeline with RESTful API integrations across 7+ US marketplaces via a 3-phase fetch strategy, cutting lookup time from ~5 min to under 30s (~90% reduction)",
+      "Engineered an 8-stage automated workflow surfacing 50+ deals/day via AI-powered price analysis and multi-channel alerts, with all results persisted to a PostgreSQL database"
     ]
   },
   {
@@ -24,8 +38,8 @@
     "github": null,
     "highlights": [
       "Scaled CCubed's pilot AI program to 10+ Canadian universities, reaching 500+ computing students through structured club partnerships",
-      "Built an adversarial cybersecurity sandbox using LangGraph, orchestrating autonomous Red/Blue Team AI agents in isolated Docker environments evaluated against 40 real-world CVEs",
-      "Delivered an autonomous systems security research initiative end-to-end as tech lead, coordinating milestone delivery with the Director of AI"
+      "Built an adversarial cybersecurity sandbox using LangGraph, orchestrating autonomous Red/Blue Team AI agents across 40 real-world CVEs, achieving ~85% average threat detection rate and reducing manual evaluation time by 60%",
+      "Delivered an autonomous systems security research initiative end-to-end as tech lead, coordinating milestone delivery with the Director of AI on schedule"
     ]
   },
   {
@@ -43,7 +57,7 @@
     ]
   },
   {
-    "role": "Technology Director",
+    "role": "Frontend Developer & Workshop Lead",
     "company": "Google Developer Groups on Campus",
     "location": "Toronto, ON",
     "period": "November 2025 – Present",

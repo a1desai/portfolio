@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
-  const interests = ['Full-Stack', 'AI/ML', 'Cybersecurity', 'Systems Design'];
+  const interests = ['Agentic AI', 'Full-Stack', 'AI/ML', 'Cybersecurity', 'Systems Design'];
 
   return (
     <section id="about" className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
@@ -10,7 +10,7 @@ const About = () => {
       {/* Photo — right side */}
       <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[42%] pointer-events-none">
         <img
-          src="/images/projects/Aryan.jpg"
+          src="/images/profile/NewAryan.jpg"
           alt="Aryan Desai"
           className="w-full h-full object-cover object-center"
         />
@@ -48,14 +48,14 @@ const About = () => {
               I build things that ship.
             </h2>
             <p className="leading-relaxed text-base" style={{ color: 'var(--text-sub)' }}>
-              3rd-year CS student at TMU, already working in production. I care about writing real code for real users — not just class projects.
+              3rd-year CS student at TMU, building agentic AI systems and full-stack products in production. Multiple hackathon wins, 500+ students reached, and real impact shipped — not just class projects.
             </p>
           </motion.div>
 
           {/* Info cards */}
           <div className="space-y-3">
             {[
-              { label: 'Currently at', title: 'FlipPilot', sub: 'Software Engineer · Remote', delay: 0.1, dot: true },
+              { label: 'Currently at', title: 'FschoolAI', sub: 'Full Stack Developer Intern · Remote', delay: 0.1, dot: true },
               { label: 'Studying',     title: 'Toronto Metropolitan University', sub: 'B.Sc. Computer Science Co-op · 3rd Year', delay: 0.18 },
               { label: 'Based in',     title: 'Toronto, ON', sub: 'Canada', delay: 0.26 },
             ].map(({ label, title, sub, delay, dot }) => (

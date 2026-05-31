@@ -4,57 +4,57 @@
       "icon": "Code2",
       "title": "Languages",
       "description": "Core programming languages for software development",
-      "skills": ["Python", "TypeScript", "JavaScript", "Java", "C++", "SQL", "Bash", "GDScript"]
+      "skills": ["Python", "TypeScript", "JavaScript", "Java", "C/C++", "SQL", "Bash"]
     },
     {
       "icon": "Zap",
       "title": "Web Development",
       "description": "Modern full-stack technologies and frameworks",
-      "skills": ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "HTML/CSS", "REST APIs", "Prisma ORM"]
+      "skills": ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "HTML/CSS", "REST APIs", "Prisma ORM", "Drizzle ORM"]
     },
     {
       "icon": "Brain",
-      "title": "AI/ML Technologies",
-      "description": "Deep learning and machine learning frameworks",
-      "skills": ["PyTorch", "TensorFlow", "Hugging Face", "Reinforcement Learning", "Neural Networks", "LLMs", "OpenAI API"]
+      "title": "AI/ML & Agentic Systems",
+      "description": "LLMs, agents, deep learning, and ML engineering",
+      "skills": ["LangChain/LangGraph", "PyTorch", "Hugging Face", "OpenAI API", "Anthropic API", "GCP Vertex AI", "RAG Pipelines", "pgvector", "Reinforcement Learning", "Multi-Agent Systems"]
     },
     {
       "icon": "Database",
       "title": "Data & Databases",
-      "description": "Database design and data management",
-      "skills": ["PostgreSQL", "SQL", "Prisma", "Supabase", "Vector Embeddings", "Query Optimization"]
+      "description": "Database design, vector search, and data management",
+      "skills": ["PostgreSQL", "Supabase", "pgvector", "Drizzle ORM", "Prisma", "Vector Embeddings", "Query Optimization"]
     },
     {
       "icon": "Cloud",
       "title": "Tools & DevOps",
       "description": "Development tools and cloud platforms",
-      "skills": ["Git/GitHub", "Docker", "CI/CD", "AWS", "GCP", "Firebase", "Jest", "Agile/Scrum"]
+      "skills": ["Git/GitHub", "Docker", "Temporal", "GitHub Actions (CI/CD)", "AWS", "GCP", "Jest", "Agile/Scrum", "Web3"]
     },
     {
       "icon": "Zap",
       "title": "Specializations",
       "description": "Advanced technical expertise",
-      "skills": ["JWT Authentication", "Unit Testing", "API Design", "System Architecture", "Algorithm Design", "Performance Optimization"]
+      "skills": ["Agentic AI Systems", "Multi-Agent Orchestration", "JWT Authentication", "API Design", "System Architecture", "Chrome Extensions", "Performance Optimization"]
     }
   ],
   "proficiency": [
-    { "name": "Full-Stack Development", "level": 85 },
-    { "name": "AI/ML Engineering", "level": 75 },
-    { "name": "System Design", "level": 70 },
-    { "name": "Cloud Architecture", "level": 65 },
+    { "name": "Full-Stack Development", "level": 88 },
+    { "name": "Agentic AI / LLM Engineering", "level": 82 },
+    { "name": "AI/ML Engineering", "level": 78 },
+    { "name": "System Design", "level": 72 },
     { "name": "DevOps & CI/CD", "level": 70 },
     { "name": "Data Structures & Algorithms", "level": 80 }
   ],
   "achievements": [
-    { "label": "$4,500 Winner", "detail": "Build Your Bridge competition for BeaverBuddy" },
-    { "label": "50+ students", "detail": "mentored in web development and AI/ML" },
-    { "label": "35% reduction", "detail": "in scan failures through systematic optimization" },
-    { "label": "Production systems", "detail": "deployed across 5+ organizations" }
+    { "label": "$4,500 Winner", "detail": "1st place / 30+ teams at Build Your Bridge (BeaverBuddy)" },
+    { "label": "4x Award Winner", "detail": "OpenClaw AI Toronto Hackathon out of 500+ builders (Disputr)" },
+    { "label": "NVIDIA Finalist", "detail": "NVIDIA Hackathon — GPU-accelerated agentic pipeline (HomeCrowd)" },
+    { "label": "500+ students", "detail": "Reached via AI programs across 10+ Canadian universities" }
   ],
   "exploring": [
-    "Advanced Large Language Models and prompt engineering",
-    "Distributed systems and microservices architecture",
-    "Kubernetes and advanced container orchestration",
-    "Quantum computing algorithms and quantum ML"
+    "Multi-agent orchestration frameworks and agentic memory systems",
+    "Autonomous workflow pipelines with human-in-the-loop guardrails",
+    "On-device AI inference and edge deployment",
+    "Distributed systems and microservices architecture"
   ]
 }

@@ -5,43 +5,49 @@ import { motion, AnimatePresence } from 'framer-motion';
 const KB = {
   greeting: `Hey! I'm Aryan's AI assistant 👋 I know everything about him — his projects, experience, skills, and more. What would you like to know?`,
 
-  who: `Aryan Desai is a 3rd-year Computer Science (Co-op) student at Toronto Metropolitan University and a Software Engineer at FlipPilot. He builds real-world AI and full-stack systems — from winning hackathons to leading AI programs across 10+ Canadian universities.`,
+  who: `Aryan Desai is a 3rd-year Computer Science (Co-op) student at Toronto Metropolitan University and currently a Full Stack Developer Intern at FschoolAI. He specializes in building agentic AI systems and full-stack production products — multiple hackathon wins, 500+ students reached, and real impact shipped.`,
 
-  education: `Aryan is in his 3rd year of a B.Sc. Computer Science (Co-op) at Toronto Metropolitan University (TMU), expected to graduate in 2029. He earned a $6,000 entrance scholarship and has been on the Dean's List for consecutive semesters. Courses include Data Structures, Algorithms, Machine Learning, and Cloud Computing.`,
+  education: `Aryan is in his 3rd year of a B.Sc. Computer Science (Co-op) at Toronto Metropolitan University (TMU), expected to graduate in 2029. He earned a **$6,000 entrance scholarship** for a 90–94 average, has been on the **Dean's List for 2 consecutive years** (2024/2025 and 2025/2026), and maintains a **3.5+ GPA**.`,
 
-  experience: `Aryan currently holds 4 roles:\n\n• **Software Engineer @ FlipPilot** — building retail extraction pipelines scraping 7+ US marketplaces and an 8-stage AI-powered deal-analysis workflow\n• **AI Project Lead @ CCubed** — leading AI initiatives across 10+ Canadian universities, reaching 500+ students\n• **AI/ML Contributor @ BYTE (TMU Computing Club)** — contributing to SecureBYTE AI, a multi-LLM platform supporting 9+ providers\n• **Technology Director @ Google Developer Groups on Campus** — delivering React, TypeScript & GCP workshops and rebuilding the SolutionHacks website`,
+  experience: `Aryan holds 5 roles:\n\n• **Full Stack Developer Intern @ FschoolAI** (May 2026 – Present) — building AI agents and full-stack features for an EdTech platform\n• **Software Engineer Intern @ FlipPilot** (Feb – May 2026) — built retail extraction pipelines across 7+ US marketplaces, ~90% lookup time reduction\n• **AI Project Lead @ CCubed** (March 2025 – Present) — AI programs across 10+ Canadian universities, 500+ students\n• **AI/ML Contributor @ BYTE** (July 2025 – Present) — contributing to SecureBYTE AI multi-LLM platform\n• **Frontend Developer & Workshop Lead @ Google Developer Groups on Campus** (Nov 2025 – Present) — React/TypeScript/GCP workshops`,
 
-  flippilot: `At FlipPilot (https://www.flippilot.ca/), Aryan is a Software Engineer building:\n• A retail extraction pipeline scraping 7+ US marketplaces using JSON-LD and microdata parsing\n• An 8-stage automated AI workflow for item analysis, price estimation, and multi-channel deal alerts logged to PostgreSQL\n\nFlipPilot is a retail intelligence startup helping people find deals.`,
+  fschool: `At FschoolAI, Aryan is a Full Stack Developer Intern (May 2026 – Present) building:\n• A Chrome extension that reduced student file upload time by ~70% and eliminated 4+ manual steps per submission\n• 3+ AI agents (research, writing, monitoring) improving platform automation across core student workflows\n\nTech: TypeScript, Python, React, Node.js`,
 
-  ccubed: `At CCubed (Computing Councils of Canada), Aryan is the AI Project Lead. He:\n• Scaled their AI program to 10+ Canadian universities, reaching 500+ computing students\n• Built an adversarial cybersecurity sandbox using LangGraph with autonomous Red/Blue Team AI agents evaluated against 40 real-world CVEs\n• Delivered autonomous systems security research as tech lead`,
+  flippilot: `At FlipPilot (https://www.flippilot.ca/), Aryan was a Software Engineer Intern (Feb–May 2026):\n• Built a backend retail extraction pipeline with RESTful API integrations across 7+ US marketplaces via a 3-phase fetch strategy, cutting lookup time from ~5 min to under 30s (~90% reduction)\n• Engineered an 8-stage automated workflow surfacing 50+ deals/day via AI-powered price analysis and multi-channel alerts, persisted to PostgreSQL\n\nTech: TypeScript, Temporal, PostgreSQL, Drizzle ORM`,
+
+  ccubed: `At CCubed (Computing Councils of Canada), Aryan is the AI Project Lead. He:\n• Scaled their AI program to 10+ Canadian universities, reaching 500+ computing students\n• Built an adversarial cybersecurity sandbox using LangGraph, orchestrating autonomous Red/Blue Team AI agents across 40 real-world CVEs — achieving ~85% average threat detection rate and reducing manual evaluation time by 60%\n• Delivered autonomous systems security research as tech lead`,
 
   byte: `At BYTE (TMU's Computing Club), Aryan contributes to SecureBYTE AI — a modular multi-LLM platform supporting 9+ providers. He built an output validation module detecting oversized code blocks in LLM responses, improving safety guardrails. GitHub: https://github.com/a1desai/SecureBYTE_AI`,
 
-  gdg: `As Technology Director at Google Developer Groups on Campus (TMU), Aryan:\n• Delivered 3+ technical workshops in React, TypeScript, and GCP, onboarding 30+ first-year students\n• Led the frontend rebuild of the SolutionHacks hackathon website, shipping features for 200+ participants`,
+  gdg: `As Frontend Developer & Workshop Lead at Google Developer Groups on Campus (TMU), Aryan:\n• Delivered 3+ technical workshops in React, TypeScript, and GCP, onboarding 30+ first-year students\n• Led the frontend rebuild of the SolutionHacks hackathon website, shipping registration and resource-sharing features for 200+ participants`,
 
-  projects: `Aryan's notable projects:\n\n• **BeaverBuddy** — Won $4,500 (1st/30+ teams) at Build Your Bridge. Full-stack mental health + immigration platform for Canadian newcomers (Next.js, PostgreSQL, GPT-4o-mini)\n• **EchoBase** — Workplace intelligence platform answering natural language queries via LLM reasoning (Next.js, Express, Supabase)\n• **ApexRL** — Multi-agent autonomous racing sim with 95%+ collision-free runs using Deep RL (Python, PyTorch, Godot)\n• **SentinAI** — Chrome Extension for real-time legal risk audits of Terms of Service (GPT-4o-mini)\n• **Sentry-AI** — AI-powered SOC triage platform cutting manual triage time by 60% (React, OpenAI API, VirusTotal API)\n• **FlashFocus** — Intelligent spaced repetition flashcard system (Java, React)`,
+  projects: `Aryan's notable projects:\n\n• **BeaverBuddy** — Won $4,500 (1st/30+ teams) at Build Your Bridge (Next.js, PostgreSQL, GPT-4o-mini)\n• **Disputr** — Won 4 awards at OpenClaw AI Toronto Hackathon out of 500+ builders — autonomous chargeback defense agent (TypeScript, GOAT Network, x402)\n• **HomeCrowd** — NVIDIA Hackathon Finalist — 3-agent AI pipeline on NVIDIA GB10 Grace Blackwell (Python, FastAPI, NVIDIA cuOpt)\n• **EchoBase** — Workplace intelligence platform with pgvector semantic search, 3x faster than keyword search\n• **ApexRL** — Multi-agent autonomous racing sim, 95%+ collision-free runs (PyTorch, Godot)\n• **SentinAI** — Chrome Extension for real-time legal ToS risk audits (GPT-4o-mini)\n• **Sentry-AI** — AI-powered SOC triage, cuts manual triage time 60%`,
 
-  beaverbuddy: `BeaverBuddy is Aryan's hackathon-winning project — it won $4,500 (1st place out of 30+ teams) at Build Your Bridge. It's a full-stack mental health and immigration platform for Canadian newcomers, featuring:\n• JWT-authenticated backend covering 50+ immigration pathways\n• Daily AI-generated cultural quests via GPT-4o-mini\n• Live event discovery via the Ticketmaster API\n\nTech: TypeScript, Next.js, PostgreSQL, Prisma`,
+  beaverbuddy: `BeaverBuddy won $4,500 (1st / 30+ teams) at Build Your Bridge. It's a full-stack mental health and immigration platform for Canadian newcomers:\n• JWT-authenticated backend covering 50+ immigration pathways\n• Daily AI-generated cultural quests via GPT-4o-mini with custom prompt engineering\n• Live event discovery via the Ticketmaster API\n\nTech: TypeScript, Next.js, PostgreSQL, Prisma`,
 
-  sentinai: `SentinAI is a Chrome Extension Aryan built at a hackathon. It performs real-time legal risk audits of Terms of Service pages — flagging harmful clauses directly in the browser sidebar. Uses GPT-4o-mini with custom prompt engineering for plain-language risk alerts.`,
+  disputr: `Disputr won **4 awards** (Market Master, x402 Master, UX Master, Security Master) at OpenClaw AI Toronto Hackathon out of 500+ builders. It's an autonomous chargeback defense agent for online sellers:\n• Engineered x402 payment integration on GOAT Network mainnet for autonomous dispute processing\n• Zero data retention with human-in-the-loop guardrails for high-risk actions\n• Built on ERC-8004 standard for agent-to-agent payments\n\nTech: TypeScript, GOAT Network, x402, ERC-8004, LLM`,
 
-  sentryai: `Sentry-AI is Aryan's AI-powered SOC triage platform that:\n• Cuts manual alert triage time by 60% per incident\n• Reduces average investigation steps from 8 to 3\n• Integrates VirusTotal and IPInfo APIs for threat intelligence\n• Built with React/Next.js frontend and Node.js/Express backend`,
+  homecrowd: `HomeCrowd was a **Finalist at NVIDIA Hackathon**. It's a three-agent AI pipeline (Pulse/Signal/Cue) that ingests live Toronto Open Data to generate 48-hour operational playbooks for small businesses:\n• Runs fully local on NVIDIA GB10 Grace Blackwell — no cloud dependency\n• GPU-accelerated staffing and inventory optimization using NVIDIA cuOpt's native linear programming API\n• cuML RandomForestRegressor for per-business revenue forecasting\n• Automatic CPU fallback via PuLP/CBC\n\nTech: Python, FastAPI, NVIDIA cuOpt, cuML, cuDF, Nemotron, MapLibre`,
 
-  echobase: `EchoBase is a workplace intelligence platform Aryan built that:\n• Ingests multiple data sources and answers natural language queries through an LLM reasoning layer\n• Uses semantic search for fast, accurate cross-document retrieval\n• Built with Next.js, TypeScript, Express.js, and Supabase/PostgreSQL`,
+  sentinai: `SentinAI is a Chrome Extension for real-time legal risk audits of Terms of Service pages — flagging harmful clauses directly in the browser sidebar. Uses GPT-4o-mini with custom prompt engineering for plain-language risk alerts. User preferences sync across devices via Chrome storage API.`,
 
-  apexrl: `ApexRL is a multi-agent autonomous racing simulation Aryan built in Godot with Deep RL. Key highlights:\n• 95%+ collision-free runs across multi-track environments\n• Curriculum-based track progression with checkpoint reward system\n• Real-time dashboards tracking 5+ performance metrics\n• Built with Python, PyTorch, and Hugging Face`,
+  sentryai: `Sentry-AI is Aryan's AI-powered SOC triage platform:\n• Cuts manual alert triage time by 60% per incident\n• Reduces average investigation steps from 8 to 3\n• Integrates VirusTotal and IPInfo APIs for threat intelligence enrichment\n• Full-stack: React/Next.js frontend + Node.js/Express backend`,
 
-  hackathon: `Aryan won $4,500 (1st place out of 30+ teams) at the Build Your Bridge hackathon with BeaverBuddy — a full-stack mental health and immigration platform for Canadian newcomers. He also competed in multiple other hackathons, building SentinAI (Chrome Extension for legal risk audits).`,
+  echobase: `EchoBase is a workplace intelligence platform that:\n• Uses a pgvector-backed semantic search layer and LLM reasoning to answer natural language queries ~3x faster than keyword search\n• Full-stack REST API backed by Supabase and PostgreSQL supporting knowledge base management and vector embeddings\n\nTech: Next.js, TypeScript, Express.js, PostgreSQL, Supabase, pgvector`,
 
-  skills: `Aryan's tech stack:\n\n• **Languages**: TypeScript, Python, Java, JavaScript, SQL\n• **Frontend**: React, Next.js, Tailwind CSS\n• **Backend**: Node.js, Express.js, PostgreSQL, Prisma, Supabase\n• **AI/ML**: PyTorch, Hugging Face, OpenAI API, LangChain, LangGraph\n• **DevOps**: Docker, AWS, GCP, CI/CD\n• **Other**: Chrome Extensions, JWT, Temporal, Drizzle ORM`,
+  apexrl: `ApexRL is a multi-agent autonomous racing simulation in Godot using Deep RL:\n• 95%+ collision-free runs across multi-track environments\n• Curriculum-based track progression with checkpoint reward system\n• Real-time dashboards tracking 5+ performance metrics\n\nTech: Python, PyTorch, Hugging Face, Godot`,
 
-  achievements: `Aryan's key achievements:\n• 🏆 Won $4,500 at Build Your Bridge hackathon (1st / 30+ teams)\n• 🎓 $6,000 entrance scholarship at TMU\n• 📚 Dean's List for consecutive semesters\n• 🌎 Led AI programs reaching 500+ students across 10+ Canadian universities\n• 💼 Software Engineer at a real startup while in 3rd year CS`,
+  hackathon: `Aryan's hackathon record:\n\n• **$4,500 (1st / 30+ teams)** at Build Your Bridge — BeaverBuddy (full-stack mental health + immigration platform)\n• **4 Awards** (Market Master, x402 Master, UX Master, Security Master) at OpenClaw AI Toronto Hackathon (500+ builders) — Disputr\n• **NVIDIA Hackathon Finalist** — HomeCrowd (3-agent GPU-accelerated pipeline on Grace Blackwell)\n\nTotal: 5+ hackathon awards/wins across competitions.`,
+
+  skills: `Aryan's tech stack:\n\n• **Languages**: TypeScript, Python, Java, JavaScript, C/C++, SQL\n• **AI/ML & Agents**: LangChain/LangGraph, PyTorch, Hugging Face, OpenAI API, Anthropic API, GCP Vertex AI, RAG Pipelines, pgvector, Multi-Agent Systems\n• **Frontend**: React, Next.js, Tailwind CSS\n• **Backend**: Node.js, Express.js, PostgreSQL, Supabase, Prisma, Drizzle ORM, Temporal\n• **DevOps**: Docker, GitHub Actions (CI/CD), AWS, GCP, Jest\n• **Other**: Chrome Extensions, JWT, Web3, NVIDIA cuOpt`,
+
+  achievements: `Aryan's key achievements:\n• **$4,500 winner** — Build Your Bridge hackathon (1st / 30+ teams) with BeaverBuddy\n• **4x Award winner** — OpenClaw AI Toronto Hackathon (500+ builders) with Disputr\n• **NVIDIA Hackathon Finalist** — HomeCrowd on GB10 Grace Blackwell\n• **$6,000 entrance scholarship** at TMU (90–94 average)\n• **Dean's List 2 consecutive years** (2024/2025 and 2025/2026), 3.5+ GPA\n• **500+ students** reached via AI programs across 10+ Canadian universities`,
 
   contact: `You can reach Aryan at:\n• 📧 Email: aryandes20@gmail.com\n• 💼 LinkedIn: linkedin.com/in/aryan-desai-cs\n• 🐙 GitHub: github.com/a1desai\n• 📍 Location: Toronto, ON, Canada`,
 
-  internship: `Aryan is open to 2026 Summer/Fall internship opportunities! He's looking for roles in software engineering, AI/ML, or full-stack development. You can reach him at aryandes20@gmail.com or schedule a call via his portfolio.`,
+  internship: `Aryan is actively looking for **Agentic AI and Full-Stack roles in 2026**! He has hands-on experience building multi-agent systems, LangGraph pipelines, production full-stack apps, and has won multiple hackathons. Reach him at aryandes20@gmail.com or book a call via his portfolio.`,
 
-  fallback: `I'm not sure about that specific topic! You can ask me about:\n• Who Aryan is\n• His education at TMU\n• Work experience (FlipPilot, CCubed, BYTE, GDG)\n• Projects (BeaverBuddy, SentinAI, Sentry-AI, etc.)\n• Skills & tech stack\n• Hackathon wins & achievements\n• How to contact him`,
+  fallback: `I'm not sure about that specific topic! You can ask me about:\n• Who Aryan is\n• His education at TMU (Dean's List, scholarship)\n• Work experience (FschoolAI, FlipPilot, CCubed, BYTE, GDG)\n• Projects (BeaverBuddy, Disputr, HomeCrowd, EchoBase, etc.)\n• Skills & tech stack\n• Hackathon wins & achievements\n• How to contact him`,
 };
 
 /* ── Response matcher ── */
@@ -52,6 +58,8 @@ const getResponse = (msg) => {
     return KB.greeting;
 
   if (/beaverbuddy|beaver buddy|build your bridge/.test(m)) return KB.beaverbuddy;
+  if (/disputr|chargeback|goat network|x402|openclaw/.test(m)) return KB.disputr;
+  if (/homecrowd|home crowd|nvidia.*hack|cuopt|grace blackwell|pulse.*signal|signal.*cue/.test(m)) return KB.homecrowd;
   if (/sentinai|sentin ai|chrome extension|terms of service/.test(m)) return KB.sentinai;
   if (/sentry.?ai|soc|triage|cybersecurity platform/.test(m)) return KB.sentryai;
   if (/echobase|echo base|workplace intel/.test(m)) return KB.echobase;
@@ -59,6 +67,7 @@ const getResponse = (msg) => {
   if (/flashfocus|flash focus|flashcard/.test(m))
     return `FlashFocus is an intelligent spaced repetition flashcard system Aryan built with a Java backend and React frontend. It uses a spaced repetition algorithm for optimized retention intervals and features a full RESTful API.`;
 
+  if (/fschool|fschoolai/.test(m)) return KB.fschool;
   if (/flippilot|flip pilot/.test(m)) return KB.flippilot;
   if (/ccubed|c3|computing council|c-cubed/.test(m)) return KB.ccubed;
   if (/\bbyte\b|securebyte|tmu.*club|computing club/.test(m)) return KB.byte;
@@ -84,9 +93,9 @@ const getResponse = (msg) => {
 /* ── Suggested questions ── */
 const SUGGESTIONS = [
   'Who is Aryan?',
-  'What projects has he built?',
-  'What\'s his tech stack?',
-  'Tell me about BeaverBuddy',
+  'What are his hackathon wins?',
+  'What\'s his AI/agent experience?',
+  'Tell me about Disputr',
   'How can I contact him?',
 ];
 

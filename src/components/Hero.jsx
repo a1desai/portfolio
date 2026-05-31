@@ -39,9 +39,9 @@ const Hero = () => {
   const { dark, toggle } = useTheme();
 
   const role = useTypewriter([
-    'AI/ML Builder',
+    'Agentic AI Builder',
     'Hackathon Winner',
-    'Software Engineer',
+    'Full-Stack Engineer',
     'CS Student @ TMU',
   ]);
 
@@ -235,21 +235,15 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.6 }}
             >
-              <p className="text-[#666] dark:text-[#999]">Building real-world AI + full-stack systems.</p>
+              <p className="text-[#666] dark:text-[#999]">Building agentic AI + full-stack production systems.</p>
               <p className="text-[#666] dark:text-[#999]">
-                Software Engineer @{' '}
-                <a
-                  href="https://www.flippilot.ca/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-[#0D0D0D] dark:text-[#F0EDE8] hover:text-blue-600 dark:hover:text-blue-400 transition"
-                >
-                  FlipPilot
-                </a>
+                Full Stack Dev Intern @{' '}
+                <span className="font-semibold text-[#0D0D0D] dark:text-[#F0EDE8]">FschoolAI</span>
               </p>
               <p className="text-[#666] dark:text-[#999]">
                 3rd Year Computer Science @{' '}
-                <span className="font-semibold text-[#0D0D0D] dark:text-[#F0EDE8]">TMU</span>.
+                <span className="font-semibold text-[#0D0D0D] dark:text-[#F0EDE8]">TMU</span>{' '}
+                · <span className="font-semibold text-blue-600 dark:text-blue-400">Open to Agentic AI Roles</span>
               </p>
             </motion.div>
 
@@ -320,7 +314,7 @@ const Hero = () => {
               {/* Photo */}
               <div className="relative w-56 h-56 rounded-full border-4 border-white dark:border-[#1C1C1C] shadow-xl overflow-hidden">
                 <img
-                  src="/images/profile/Aryan.jpg"
+                  src="/images/profile/NewAryan.jpg"
                   alt="Aryan Desai"
                   className="w-full h-full object-cover"
                 />
@@ -332,7 +326,7 @@ const Hero = () => {
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
-                <span className="text-xs font-bold whitespace-nowrap" style={{ color: 'var(--text)' }}>FlipPilot SE</span>
+                <span className="text-xs font-bold whitespace-nowrap" style={{ color: 'var(--text)' }}>FschoolAI SDE</span>
               </motion.div>
               {/* Floating school badge */}
               <motion.div
@@ -354,7 +348,7 @@ const Hero = () => {
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           {[
-            { value: config.heroStats.hackathonWon, label: 'Hackathon Won' },
+            { value: config.heroStats.hackathonWon, label: 'Hackathon Awards' },
             { value: config.heroStats.studentsReached, label: 'Students Reached' },
             { value: config.heroStats.projectsShipped, label: 'Projects Shipped' },
           ].map(({ value, label }, i) => (
